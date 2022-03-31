@@ -134,11 +134,11 @@ public class OutItem : MonoBehaviour
     {
         if (page_i == 5)
         {
-
             PlayerPrefs.SetInt("outgoods4", 1);
             PlayerPrefs.SetInt("setending", 2);
             PlayerPrefs.SetInt("setoutgoods",4);
             ending_obj.SetActive(false);
+            endingImg_obj.GetComponent<Image>().sprite = null;
             onRoom_obj.GetComponent<Image>().sprite = spr_goodsImg[4];
             goods_obj[4].SetActive(true);
             txt_obj.SetActive(false);
@@ -146,7 +146,7 @@ public class OutItem : MonoBehaviour
         else
         {
             page_i++;
-            endingImg_obj.GetComponent<Image>().sprite = spr_end[page_i];
+            endingImg_obj.GetComponent<Image>().sprite = Resources.Load<Sprite>("Ending/ending"+page_i);
             endBtnL_obj.SetActive(true);
 
             if (page_i == 5)
@@ -165,7 +165,7 @@ public class OutItem : MonoBehaviour
         {
             endBtnR_obj.GetComponent<Image>().sprite = spr_endRBtn;
             page_i--;
-            endingImg_obj.GetComponent<Image>().sprite = spr_end[page_i];
+            endingImg_obj.GetComponent<Image>().sprite = Resources.Load<Sprite>("Ending/ending" + page_i);
             if (page_i == 0)
             {
                 endBtnL_obj.SetActive(false);

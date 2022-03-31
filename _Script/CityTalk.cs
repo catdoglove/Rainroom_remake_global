@@ -16,8 +16,6 @@ public class CityTalk : MonoBehaviour
     int ckFood;
 
     int[] allArr = new int[2];
-    int loveLv = 0; //호감도 단계라고 생각하면 됨
-    int countTalkNum;//대화횟수
 
     float speedF = 0.05f;
     int nowArr = 0; //현재 줄
@@ -171,17 +169,6 @@ public class CityTalk : MonoBehaviour
         PlayerPrefs.SetInt("talkcityCK", 99);
         //대화속도
         speedF = PlayerPrefs.GetFloat("talkspeed", 0.05f);
-        //Debug.Log(countTalkNum);
-
-        //if (countTalkNum == 0)
-        // {
-        //Debug.Log("대화횟수마감");
-        // }
-        // else
-        // {
-
-        //소리
-        //Audio_obj.GetComponent<SoundEvt>().talkSound();
 
         if (PlayerPrefs.GetInt("talk", 5) <= 0)
         {

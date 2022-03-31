@@ -92,6 +92,8 @@ public class MainTime : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //구독확인
+        PlayerPrefs.SetInt("gudocgetonce", 1);
         if (PlayerPrefs.GetInt("titlecheck", 0) == 1)
         {
             title_obj.SetActive(false);
@@ -284,19 +286,24 @@ public class MainTime : MonoBehaviour
 
     public void gudocOpen()
     {
-        news_obj.SetActive(true);
-        PlayerPrefs.SetString("saveGudoc", System.DateTime.Now.ToString());
-        h = PlayerPrefs.GetInt(str + "h", 0);
-        r = PlayerPrefs.GetInt(str + "r", 0);
-        h = h + 50;
-        r = r + 500;
-        PlayerPrefs.SetInt(str + "r", r);
-        PlayerPrefs.SetInt(str + "h", h);
+        if (PlayerPrefs.GetInt("gudocgetonce", 1) == 1)
+        {
+            news_obj.SetActive(true);
+            PlayerPrefs.SetString("saveGudoc", System.DateTime.Now.ToString());
+            h = PlayerPrefs.GetInt(str + "h", 0);
+            r = PlayerPrefs.GetInt(str + "r", 0);
+            h = h + 50;
+            r = r + 500;
+            PlayerPrefs.SetInt(str + "r", r);
+            PlayerPrefs.SetInt(str + "h", h);
+        }
+
     }
 
 
     public void gudocClose()
     {
+        PlayerPrefs.SetInt("gudocgetonce", 1);
         news_obj.SetActive(false);
     }
 

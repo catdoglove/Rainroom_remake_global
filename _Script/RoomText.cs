@@ -92,18 +92,22 @@ public class RoomText : MonoBehaviour
 
     public void showNews()
     {
-        lineReload(1);
-        
-        newsTxttArr[0] = "" + data_news[PlayerPrefs.GetInt("newsrandom" + nowArr, 0)]["big"];
-        newsTxttArr[1] = "" + data_news[PlayerPrefs.GetInt("newsrandom" + nowArr, 0)]["middle"];
-        newsTxttArr[2] = "" + data_news[PlayerPrefs.GetInt("newsrandom" + nowArr, 0)]["small"];
+        if (PlayerPrefs.GetInt("gudocgetonce", 1) == 1)
+        {
+            lineReload(1);
 
-        
-        newsBigTxt.text = newsTxttArr[0];
-        newsMidTxt.text = newsTxttArr[1];
-        newsSmlTxt.text = newsTxttArr[2];
+            newsTxttArr[0] = "" + data_news[PlayerPrefs.GetInt("newsrandom" + nowArr, 0)]["big"];
+            newsTxttArr[1] = "" + data_news[PlayerPrefs.GetInt("newsrandom" + nowArr, 0)]["middle"];
+            newsTxttArr[2] = "" + data_news[PlayerPrefs.GetInt("newsrandom" + nowArr, 0)]["small"];
 
-        showNewsmall();
+
+            newsBigTxt.text = newsTxttArr[0];
+            newsMidTxt.text = newsTxttArr[1];
+            newsSmlTxt.text = newsTxttArr[2];
+
+            showNewsmall();
+        }
+        PlayerPrefs.SetInt("gudocgetonce", 0);
 
     }
 

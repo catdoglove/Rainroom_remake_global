@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CityShop : MonoBehaviour
 {
-    public GameObject shop_obj, todayShop_obj, shopHelp_obj, doorOpen_obj, doorClose_obj;
+    public GameObject shop_obj, todayShop_obj, shopHelp_obj, doorOpen_obj, doorClose_obj, blackimg;
     public GameObject shopYN_obj, shopTodayYN_obj;
     public int num_i;
     public Text[] txt_bed, txt_desk, txt_light;
