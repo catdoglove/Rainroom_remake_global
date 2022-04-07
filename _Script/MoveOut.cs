@@ -38,7 +38,7 @@ public class MoveOut : MonoBehaviour
         else
         {
             toast.SetActive(true);
-            toastTxt.text = "마음이 부족하다.";
+            toastTxt.text = "There is a shortage of heart.";
         }
     }
 
@@ -57,7 +57,7 @@ public class MoveOut : MonoBehaviour
         else
         {
             toast.SetActive(true);
-            toastTxt.text = "마음이 부족하다.";
+            toastTxt.text = "There is a shortage of heart.";
         }
     }
 
@@ -82,7 +82,7 @@ public class MoveOut : MonoBehaviour
         acb = acb - (acb / 60) * 60;
         acb = 59 - acb;
         ac = 14 - ac;
-
+        
         if (PlayerPrefs.GetInt("outtimecut", 0) == 4)
         {
             ac = ac - 10;
@@ -98,7 +98,7 @@ public class MoveOut : MonoBehaviour
             else
             {
                 shopPopup_obj.SetActive(true);
-                txt_Popup.text = "별로 나가고 싶지 않은 것 같다." + "\n" + "더 친해지면 나갈지도 모른다.";
+                txt_Popup.text = "They don't seem to want to go out." + "\n" + "Maybe can go out a little more familiar.";
                 GameObject.Find("메뉴펼치기").transform.Find("메뉴목록").gameObject.SetActive(false);
             }
         }
@@ -106,7 +106,7 @@ public class MoveOut : MonoBehaviour
         {
             timerPop_obj.SetActive(true);
             timerPopClock_obj.SetActive(true);
-            txt_timePopup.text = "돌아온 지 얼마 안 되었다." + "\n" + "우산이 마르면 가자.";
+            txt_timePopup.text = "It hasn't been long since it came back." + "\n" + "They can go out when the umbrella dries.";
         }
     }
 

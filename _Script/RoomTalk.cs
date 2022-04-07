@@ -58,34 +58,34 @@ public class RoomTalk : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("sleeping", 0) == 1) //잘때 멘트
         {
-            toastTxt = "쿨쿨... 잘가";
+            toastTxt = "(Good night..)";
         }
         else
         {
             switch (PlayerPrefs.GetInt("likelv", 0))
             {
                 case 0:
-                    toastTxt = "..잘가";
+                    toastTxt = "..Bye";
                     break;
 
                 case 1:
-                    toastTxt = "잘가..";
+                    toastTxt = "Goodbye..";
                     break;
 
                 case 2:
-                    toastTxt = "안녕 잘가.";
+                    toastTxt = "Well, Good bye..";
                     break;
 
                 case 3:
-                    toastTxt = "즐거웠어 잘가.";
+                    toastTxt = "It was nice to see you. Good bye.";
                     break;
 
                 case 4:
-                    toastTxt = "잘가 좋은하루 보내.";
+                    toastTxt = "Good bye. See you later.";
                     break;
 
                 default:
-                    toastTxt = "잘가. 친구";
+                    toastTxt = "See you later. Friend";
                     break;
             }
         }
@@ -127,11 +127,11 @@ public class RoomTalk : MonoBehaviour
                 closeTB.SetActive(true);
                 if (PlayerPrefs.GetInt("sleeping", 0) == 1)
                 {
-                    Text_obj.text = "(자고있다.)\n(뒤로가기를 한번 더 누르면 종료됩니다)";
+                    Text_obj.text = "(Now sleeping. Go out quietly?)\n(Touch back button twice.)";
                 }
                 else
                 {
-                    Text_obj.text = "가는 거야?\n(뒤로가기를 한번 더 누르면 종료됩니다)";
+                    Text_obj.text = "Are you going?\n(Touch back button twice.)";
                 }
             }
             else
@@ -160,11 +160,11 @@ public class RoomTalk : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("sleeping", 0) == 1)
             {
-                Text_obj.text = "..쿨쿨";
+                Text_obj.text = "(..hmm)";
             }
             else
             {
-                Text_obj.text = "..흠";
+                Text_obj.text = "..um";
             }
             exit_int = 0;
             cnt_exit = 0;
@@ -618,7 +618,7 @@ public class RoomTalk : MonoBehaviour
 
     public void talkDal()
     {
-        text_str = "달/고/나/ /장/수/가/ /줬/어/./ /자/주/ /사/ /먹/은/ /기/념/품/이/야/./ /물/론/ /진/짜/ /물/고/기/는/ /아/니/야/";
+        text_str = "T/h/e/ /d/a/l/g/o/n/a/ /s/e/l/l/e/r/ /g/a/v/e/ /m/e/ /t/h/i/s/./ /O/f/ /c/o/u/r/s/e/ /t/h/i/s/ /i/s/ /n/o/t/ /r/e/a/ll/y/ /f/i/s/h/./";
         testText_cut = text_str.Split('/');
         cleantalk();
 
@@ -637,49 +637,49 @@ public class RoomTalk : MonoBehaviour
             like = 0;
             PlayerPrefs.SetInt("likepoint", like);
             PlayerPrefs.SetInt("likelv", PlayerPrefs.GetInt("likelv", 0) + 1);
-            txt_pop.text = "조금 친해진거 같다.";
-            pop_obj.SetActive(true);
+            SetMoreTxt();
         }
         else if (like >= 350 && PlayerPrefs.GetInt("likelv", 0) == 4 && PlayerPrefs.GetInt("booklv", 0) >= 8 && PlayerPrefs.GetInt("windowlv", 0) >= 8)
         {
             like = 0;
             PlayerPrefs.SetInt("likepoint", like);
             PlayerPrefs.SetInt("likelv", 5);
-            txt_pop.text = "조금 친해진거 같다.";
-            pop_obj.SetActive(true);
+            SetMoreTxt();
         }
         else if (like >= 310 && PlayerPrefs.GetInt("likelv", 0) == 3 && PlayerPrefs.GetInt("booklv", 0) >= 8 && PlayerPrefs.GetInt("windowlv", 0) >= 8)
         {
             like = 0;
             PlayerPrefs.SetInt("likepoint", like);
             PlayerPrefs.SetInt("likelv", 4);
-            txt_pop.text = "조금 친해진거 같다.";
-            pop_obj.SetActive(true);
+            SetMoreTxt();
         }
         else if (like >= 225 && PlayerPrefs.GetInt("likelv", 0) == 2 && PlayerPrefs.GetInt("booklv", 0) >= 6 && PlayerPrefs.GetInt("windowlv", 0) >= 6)
         {
             like = 0;
             PlayerPrefs.SetInt("likepoint", like);
             PlayerPrefs.SetInt("likelv", 3);
-            txt_pop.text = "조금 친해진거 같다.";
-            pop_obj.SetActive(true);
+            SetMoreTxt();
         }
         else if (like >= 110 && PlayerPrefs.GetInt("likelv", 0) == 1 && PlayerPrefs.GetInt("booklv", 0) >= 4 && PlayerPrefs.GetInt("windowlv", 0) >= 4)
         {
             like = 0;
             PlayerPrefs.SetInt("likepoint", like);
             PlayerPrefs.SetInt("likelv", 2);
-            txt_pop.text = "조금 친해진거 같다.";
-            pop_obj.SetActive(true);
+            SetMoreTxt();
         }
         else if (like >= 50 && PlayerPrefs.GetInt("likelv", 0) == 0 && PlayerPrefs.GetInt("booklv", 0) >= 2 && PlayerPrefs.GetInt("windowlv", 0) >= 2)
         {
             like = 0;
             PlayerPrefs.SetInt("likepoint", like);
             PlayerPrefs.SetInt("likelv", 1);
-            txt_pop.text = "조금 친해진거 같다.";
-            pop_obj.SetActive(true);
+            SetMoreTxt();
         }
+    }
+
+    void SetMoreTxt()
+    {
+        txt_pop.text = "It seems a little more familiar.";
+        pop_obj.SetActive(true);
     }
 
     /// <summary>

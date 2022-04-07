@@ -61,13 +61,13 @@ public class TurtleChange : MonoBehaviour
                 have_h = have_h + 10;
                 PlayerPrefs.SetInt(str_Code + "r",have_r);
                 PlayerPrefs.SetInt(str_Code + "h", have_h);
-                txt_pop.text = "교환되었습니다.";
+                txt_pop.text = "It was exchanged.";
                 turtlePop_obj.SetActive(true);
                 SetTextHave();
             }
             else
             {
-                txt_pop.text = "수량이 부족합니다.";
+                txt_pop.text = "There is a shortage of water.";
                 turtlePop_obj.SetActive(true);
                 turtleWinYN_obj.SetActive(false);
             }
@@ -80,13 +80,13 @@ public class TurtleChange : MonoBehaviour
                 have_r = have_r + 1000;
                 PlayerPrefs.SetInt(str_Code + "r", have_r);
                 PlayerPrefs.SetInt(str_Code + "h", have_h);
-                txt_pop.text = "교환되었습니다.";
+                txt_pop.text = "It was exchanged.";
                 turtlePop_obj.SetActive(true);
                 SetTextHave();
             }
             else
             {
-                txt_pop.text = "수량이 부족합니다.";
+                txt_pop.text = "There is a shortage of heart.";
                 turtlePop_obj.SetActive(true);
                 turtleWinYN_obj.SetActive(false);
             }

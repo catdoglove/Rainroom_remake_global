@@ -130,7 +130,7 @@ public class AdmobADS : MonoBehaviour {
         if (PlayerPrefs.GetInt("talk", 5) >= 5)
         {
             Toast_obj.SetActive(true);
-            adPop_txt.text = "대화 횟수가 이미 최대값이라" + "\n" + "시청할 수 없다.";
+            adPop_txt.text = "Number of Talk's already the max," + "\n" + "so you can't";
         }
         else
         {
@@ -142,7 +142,7 @@ public class AdmobADS : MonoBehaviour {
             else
             {
                 Toast_obj.SetActive(true);
-                adPop_txt.text = "아직 볼 수 없다." + "\n" + "나중에 시도해보자.";
+                adPop_txt.text = "Can't see it yet." + "\n" + "Try later.";
             }
         }
     }
@@ -191,7 +191,7 @@ public class AdmobADS : MonoBehaviour {
 
 
         Toast_obj.SetActive(true);
-        adPop_txt.text = "외출 대기 시간이" + "\n" + "줄어들었다.";
+        adPop_txt.text = "Time needed to go out" + "\n" + "was reduced.";
     }
     private void HandleAdFailedToPresent(object sender, AdErrorEventArgs args)
     {

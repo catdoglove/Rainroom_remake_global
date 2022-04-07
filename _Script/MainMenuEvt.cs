@@ -31,18 +31,18 @@ public class MainMenuEvt : MonoBehaviour
         }
         
         PlayerPrefs.SetInt("scene", 0);
-
+        
         //대화속도
         switch (PlayerPrefs.GetFloat("talkspeed", 0.05f))
         {
             case 0.05f:
-                speed_txt.text = "대화속도 보통";
+                speed_txt.text = "Conversation Speed Normal";
                 break;
             case 0.03f:
-                speed_txt.text = "대화속도 빠름";
+                speed_txt.text = "Conversation Speed Fast";
                 break;
             case 0.07f:
-                speed_txt.text = "대화속도 느림";
+                speed_txt.text = "Conversation Speed Slow";
                 break;
         }
 
@@ -314,17 +314,17 @@ public class MainMenuEvt : MonoBehaviour
         float f =PlayerPrefs.GetFloat("talkspeed", 0.05f);
         if (f == 0.07f)
         {
-            speed_txt.text = "대화속도 보통";
+            speed_txt.text = "Conversation Speed Normal";
             PlayerPrefs.SetFloat("talkspeed", 0.05f);
         }
         else if (f == 0.05f)
         {
-            speed_txt.text = "대화속도 빠름";
+            speed_txt.text = "Conversation Speed Fast";
             PlayerPrefs.SetFloat("talkspeed", 0.03f);
         }
         else if (f == 0.03f)
         {
-            speed_txt.text = "대화속도 느림";
+            speed_txt.text = "Conversation Speed Slow";
             PlayerPrefs.SetFloat("talkspeed", 0.07f);
         }
     }

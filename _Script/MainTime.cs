@@ -362,7 +362,7 @@ public class MainTime : MonoBehaviour
                 }
                 else
                 {
-                    heartNotE.text = "마음이 부족하다.";
+                    heartNotE.text = "There is a shortage of heart.";
                     hPop_obj.SetActive(true);
                     heartpaperEatBtn.SetActive(false);
                     gm.GetComponent<SoundEvt>().touchSound();
@@ -384,7 +384,7 @@ public class MainTime : MonoBehaviour
                 }
                 else
                 {
-                    heartNotE.text = "마음이 부족하다.";
+                    heartNotE.text = "There is a shortage of heart.";
                     hPop_obj.SetActive(true);
                     heartpaperEatBtn.SetActive(false);
                     gm.GetComponent<SoundEvt>().touchSound();
@@ -406,7 +406,7 @@ public class MainTime : MonoBehaviour
                 }
                 else
                 {
-                    heartNotE.text = "마음이 부족하다.";
+                    heartNotE.text = "There is a shortage of heart.";
                     hPop_obj.SetActive(true);
                     heartpaperEatBtn.SetActive(false);
                     gm.GetComponent<SoundEvt>().touchSound();
@@ -428,7 +428,7 @@ public class MainTime : MonoBehaviour
                 }
                 else
                 {
-                    heartNotE.text = "마음이 부족하다.";
+                    heartNotE.text = "There is a shortage of heart.";
                     hPop_obj.SetActive(true);
                     heartpaperEatBtn.SetActive(false);
                     gm.GetComponent<SoundEvt>().touchSound();
@@ -508,12 +508,12 @@ public class MainTime : MonoBehaviour
         //}
     }
 
-
+    
     public void getGlassWater()
     {
         int k = 0;
         k = PlayerPrefs.GetInt("water", 0) * 5;
-        txt_glassShow.text = "물을 " + k + "만큼 모았다.";
+        txt_glassShow.text = "Collected " + k + "water.";
         k = PlayerPrefs.GetInt(str + "r", 0) + k;
         PlayerPrefs.SetInt(str + "r", k);
         PlayerPrefs.SetInt("water", 0);
@@ -589,13 +589,13 @@ public class MainTime : MonoBehaviour
                 //물을 줄수 없음
 
                 popUpTime_obj.SetActive(true);
-                txt_popUpTime.text = "아직 축축하다.";
+                txt_popUpTime.text = "The soil is still wet.";
             }
             else
             {
                 //물을 줄수 있음
                 seedYN_obj.SetActive(true);
-                txt_seedW.text = "물을 " + PlayerPrefs.GetInt("seedlv", 0) * 1000 + " 줄까?";
+                txt_seedW.text = "" + PlayerPrefs.GetInt("seedlv", 0) * 1000 + "Water this?";
             }
         }
 
@@ -632,7 +632,7 @@ public class MainTime : MonoBehaviour
             else
             {
                 popUp_obj.SetActive(true);
-                txt_popUp.text = "물이 부족해..";
+                txt_popUp.text = "Not enough water..";
             }
 
         }//end of else

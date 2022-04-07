@@ -117,7 +117,7 @@ public class CityShop : MonoBehaviour
             if (level < 1)
             {
                 shopPopup_obj.SetActive(true);
-                txt_Popup.text = "아직 Max가 되지 않아 살 수 없다.";
+                txt_Popup.text = "It is not Lv.Max, so can't buy it yet.";
             }
             else
             {
@@ -134,7 +134,7 @@ public class CityShop : MonoBehaviour
             if (level < 2)
             {
                 shopPopup_obj.SetActive(true);
-                txt_Popup.text = "아직 Max가 되지 않아 살 수 없다.";
+                txt_Popup.text = "It is not Lv.Max, so can't buy it yet.";
             }
             else
             {
@@ -408,7 +408,7 @@ public class CityShop : MonoBehaviour
             //빗물
             txt_bed[1].text = "x";
             //이름
-            txt_bed[2].text = "이불";
+            txt_bed[2].text = "Duvet";
             txt_bed[3].text = "Lv.0";
         }
         else
@@ -432,7 +432,7 @@ public class CityShop : MonoBehaviour
             //빗물
             txt_bed[1].text = "x";
             //이름
-            txt_bed[2].text = "오동나무침대";
+            txt_bed[2].text = "Complete bed";
             shopBtn_obj[0].GetComponent<Button>().interactable = false;
             txt_bed[3].text = "Lv.Max";
         }
@@ -455,7 +455,7 @@ public class CityShop : MonoBehaviour
             //빗물
             txt_desk[1].text = "x";
             //이름
-            txt_desk[2].text = "원목책상";
+            txt_desk[2].text = "Complete desk";
             txt_desk[3].text = "Lv.Max";
         }
 
@@ -469,7 +469,7 @@ public class CityShop : MonoBehaviour
             //빗물
             txt_light[1].text = "x";
             //이름
-            txt_light[2].text = "전등";
+            txt_light[2].text = "Light";
             txt_light[3].text = "Lv.0";
         }
         else
@@ -495,7 +495,7 @@ public class CityShop : MonoBehaviour
             //빗물
             txt_light[1].text = "x";
             //이름
-            txt_light[2].text = "고급전등";
+            txt_light[2].text = "Complete light";
 
             txt_light[3].text = "Lv.Max";
         }
@@ -504,53 +504,53 @@ public class CityShop : MonoBehaviour
     void setPrice()
     {
         //책상
-        desk_name[0] = "책상";
+        desk_name[0] = "Desk";
         cost_desk[0] = 220;
         cost_desk[1] = 15000;
 
-        desk_name[1] = "나무책상";
+        desk_name[1] = "Wooden desk";
         cost_desk[2] = 260;
         cost_desk[3] = 17000;
 
-        desk_name[2] = "원목책상";
+        desk_name[2] = "Complete desk";
         cost_desk[4] = 300;
         cost_desk[5] = 19000;
 
-        desk_name[3] = "원목책상";
+        desk_name[3] = "Complete desk";
         cost_desk[6] = 0;
         cost_desk[7] = 0;
-
+        
         //침대
-        bed_name[0] = "침대";
+        bed_name[0] = "Bed";
         cost_bed[0] = 320;
         cost_bed[1] = 20000;
 
-        bed_name[1] = "나무침대";
+        bed_name[1] = "Wooden bed";
         cost_bed[2] = 340;
         cost_bed[3] = 22000;
 
-        bed_name[2] = "오동나무침대";
+        bed_name[2] = "Complete bed";
         cost_bed[4] = 380;
         cost_bed[5] = 25000;
 
-        bed_name[3] = "오동나무침대";
+        bed_name[3] = "Complete bed";
         cost_bed[6] = 0;
         cost_bed[7] = 0;
 
         //전등
-        light_name[0] = "하얀전등";
+        light_name[0] = "White light";
         cost_light[0] = 250;
         cost_light[1] = 17000;
 
-        light_name[1] = "까만전등";
+        light_name[1] = "Black light";
         cost_light[2] = 280;
         cost_light[3] = 19000;
 
-        light_name[2] = "고급전등";
+        light_name[2] = "Complete light";
         cost_light[4] = 330;
         cost_light[5] = 24000;
 
-        light_name[3] = "고급전등";
+        light_name[3] = "Complete light";
         cost_light[6] = 0;
         cost_light[7] = 0;
     }
@@ -577,7 +577,7 @@ public class CityShop : MonoBehaviour
                     //빗물
                     txt_today[ci + 1].text = "x";
                     //이름
-                    txt_today[ci + 2].text = "품절";
+                    txt_today[ci + 2].text = "SoldOut";
                     //레벨
                     txt_today[ci + 3].text = "Lv.Max";
                 }
@@ -604,7 +604,7 @@ public class CityShop : MonoBehaviour
                 //빗물
                 txt_today[i + 1].text = "x";
                 //이름
-                txt_today[i + 2].text = "품절";
+                txt_today[i + 2].text = "SoldOut";
                 //레벨
                 txt_today[i + 3].text = "Lv.Max";
                 PlayerPrefs.SetInt("setoutgoods", num_i);
@@ -627,6 +627,6 @@ public class CityShop : MonoBehaviour
     void PopShop()
     {
         shopPopup_obj.SetActive(true);
-        txt_Popup.text = "구입하기에 가지고 있는 것이 부족하다.";
+        txt_Popup.text = "Not enough to do that.";
     }
 }

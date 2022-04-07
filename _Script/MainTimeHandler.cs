@@ -33,7 +33,7 @@ public class MainTimeHandler : MonoBehaviour {
             PlayerPrefs.SetString("TalkLastTime", System.DateTime.Now.ToString());
         }
     }
-
+    
     void Warring()
     {
         //부정행위방지
@@ -42,13 +42,13 @@ public class MainTimeHandler : MonoBehaviour {
             if (getRain > 100000)
             {//2주일 되었을 때
                 getRain = 0;
-                warningTxt.text = "빗물이 너무 모여 물탱크가 터져버렸다." + "\n"+"겨우 수리했다.";
+                warningTxt.text = "The water leak out because of neglect." + "\n"+ "It's fixed now.";
                 warring_obj.SetActive(true);
             }
             else
             {
                 getRain = 36000; //물탱크가 꽉 찼다
-                warningTxt.text = "장기간 방치로 인해 물탱크기능이 멈췄다." + "\n"+"이제 작동한다.";
+                warningTxt.text = "The water tank is stop because of neglect." + "\n"+ "It is working now.";
                 warring_obj.SetActive(true);
             }
         }

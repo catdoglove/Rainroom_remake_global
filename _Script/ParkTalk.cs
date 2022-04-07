@@ -47,7 +47,7 @@ public class ParkTalk : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             catPop_obj.SetActive(true);
-            txt_pop.text = "여기서는 헤어질 수 없다.";
+            txt_pop.text = "(Exit the game is available at home)";
         }
 
     }
@@ -321,7 +321,7 @@ public class ParkTalk : MonoBehaviour
                     if (PlayerPrefs.GetInt("catlove", 0) == 0)
                     {
                         catPop_obj.SetActive(true);
-                        txt_pop.text= "고양이와 친해졌다."+"\n"+"정보창에 뭔가 찍혔다.";
+                        txt_pop.text= "I got close to the cat." + "\n"+ "There's something on the Info window.";
                         PlayerPrefs.SetInt("catlove", 1);
                     }
                 }
@@ -549,7 +549,7 @@ public class ParkTalk : MonoBehaviour
                 if (PlayerPrefs.GetInt("dalgona", 0) == 15)
                 {
                     catPop_obj.SetActive(true);
-                    txt_pop.text = "달달한 냄새가 났다." + "\n" + "방안을 확인해보자.";
+                    txt_pop.text = "I smelled something sweet." + "\n" + "Let's check the room.";
                 }
             }
             else

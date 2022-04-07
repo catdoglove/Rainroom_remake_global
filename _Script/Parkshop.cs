@@ -79,7 +79,7 @@ public class Parkshop : MonoBehaviour
                 if (item_num == 5)
                 {
                     txt_fst[0].text = "Lv.MAX";
-                    txt_fst[1].text = "품절";
+                    txt_fst[1].text = "SoldOut";
                     txt_fst[2].text = "0";
                     txt_fst[3].text = "0";
                     shop_fst.GetComponent<Button>().interactable = false;
@@ -96,7 +96,7 @@ public class Parkshop : MonoBehaviour
                 if (item_num == 5)
                 {
                     txt_sec[0].text = "Lv.MAX";
-                    txt_sec[1].text = "품절";
+                    txt_sec[1].text = "SoldOut";
                     txt_sec[2].text = "0";
                     txt_sec[3].text = "0";
                     shop_sec.GetComponent<Button>().interactable = false;
@@ -116,7 +116,7 @@ public class Parkshop : MonoBehaviour
                 if (item_num == 5)
                 {
                     txt_fst[0].text = "Lv.MAX";
-                    txt_fst[1].text = "품절";
+                    txt_fst[1].text = "SoldOut";
                     txt_fst[2].text = "0";
                     txt_fst[3].text = "0";
                     shop_fst.GetComponent<Button>().interactable = false;
@@ -132,7 +132,7 @@ public class Parkshop : MonoBehaviour
                 if (item_num == 9)
                 {
                     txt_sec[0].text = "Lv.MAX";
-                    txt_sec[1].text = "품절";
+                    txt_sec[1].text = "SoldOut";
                     txt_sec[2].text = "0";
                     txt_sec[3].text = "0";
                     shop_sec.GetComponent<Button>().interactable = false;
@@ -152,7 +152,7 @@ public class Parkshop : MonoBehaviour
                 if (item_num == 5)
                 {
                     txt_fst[0].text = "Lv.MAX";
-                    txt_fst[1].text = "품절";
+                    txt_fst[1].text = "SoldOut";
                     txt_fst[2].text = "0";
                     txt_fst[3].text = "0";
                     shop_fst.GetComponent<Button>().interactable = false;
@@ -168,7 +168,7 @@ public class Parkshop : MonoBehaviour
                 if (item_num == 9)
                 {
                     txt_sec[0].text = "Lv.MAX";
-                    txt_sec[1].text = "품절";
+                    txt_sec[1].text = "SoldOut";
                     txt_sec[2].text = "0";
                     txt_sec[3].text = "0";
                     shop_sec.GetComponent<Button>().interactable = false;
@@ -189,7 +189,7 @@ public class Parkshop : MonoBehaviour
                 if (item_num == 5)
                 {
                     txt_fst[0].text = "Lv.MAX";
-                    txt_fst[1].text = "품절";
+                    txt_fst[1].text = "SoldOut";
                     txt_fst[2].text = "0";
                     txt_fst[3].text = "0";
                     shop_fst.GetComponent<Button>().interactable = false;
@@ -205,7 +205,7 @@ public class Parkshop : MonoBehaviour
                 if (item_num == 9)
                 {
                     txt_sec[0].text = "Lv.MAX";
-                    txt_sec[1].text = "품절";
+                    txt_sec[1].text = "SoldOut";
                     txt_sec[2].text = "0";
                     txt_sec[3].text = "0";
                     shop_sec.GetComponent<Button>().interactable = false;
@@ -247,7 +247,7 @@ public class Parkshop : MonoBehaviour
                         PlayerPrefs.SetInt(str_Code + "r", have_r);
                         PlayerPrefs.SetInt("clock", item_num);
                         txt_fst[0].text = "Lv.X";
-                        txt_fst[1].text = "품절";
+                        txt_fst[1].text = "SoldOut";
                         txt_fst[2].text = "X";
                         txt_fst[3].text = "X";
                         shop_fst.GetComponent<Button>().interactable = false;
@@ -255,8 +255,7 @@ public class Parkshop : MonoBehaviour
                     }
                     else
                     {
-                        txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
-                        popUp_obj.SetActive(true);
+                        SetNeedTxt();
                     }
                     break;
                 case 1://액자그림
@@ -273,7 +272,7 @@ public class Parkshop : MonoBehaviour
                         PlayerPrefs.SetInt(str_Code + "r", have_r);
                         PlayerPrefs.SetInt("frame", item_num);
                         txt_fst[0].text = "Lv.X";
-                        txt_fst[1].text = "품절";
+                        txt_fst[1].text = "SoldOut";
                         txt_fst[2].text = "X";
                         txt_fst[3].text = "X";
                         shop_fst.GetComponent<Button>().interactable = false;
@@ -281,8 +280,7 @@ public class Parkshop : MonoBehaviour
                     }
                     else
                     {
-                        txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
-                        popUp_obj.SetActive(true);
+                        SetNeedTxt();
                     }
                     break;
                 case 2://시계그림
@@ -299,7 +297,7 @@ public class Parkshop : MonoBehaviour
                         PlayerPrefs.SetInt(str_Code + "r", have_r);
                         PlayerPrefs.SetInt("clock", item_num);
                         txt_fst[0].text = "Lv.X";
-                        txt_fst[1].text = "품절";
+                        txt_fst[1].text = "SoldOut";
                         txt_fst[2].text = "X";
                         txt_fst[3].text = "X";
                         shop_fst.GetComponent<Button>().interactable = false;
@@ -310,8 +308,7 @@ public class Parkshop : MonoBehaviour
                     }
                     else
                     {
-                        txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
-                        popUp_obj.SetActive(true);
+                        SetNeedTxt();
                     }
                     break;
 
@@ -329,7 +326,7 @@ public class Parkshop : MonoBehaviour
                         PlayerPrefs.SetInt(str_Code + "r", have_r);
                         PlayerPrefs.SetInt("clock", item_num);
                         txt_fst[0].text = "Lv.X";
-                        txt_fst[1].text = "품절";
+                        txt_fst[1].text = "SoldOut";
                         txt_fst[2].text = "X";
                         txt_fst[3].text = "X";
                         shop_fst.GetComponent<Button>().interactable = false;
@@ -340,8 +337,7 @@ public class Parkshop : MonoBehaviour
                     }
                     else
                     {
-                        txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
-                        popUp_obj.SetActive(true);
+                        SetNeedTxt();
                     }
                     break;
             }
@@ -374,7 +370,7 @@ public class Parkshop : MonoBehaviour
                         PlayerPrefs.SetInt(str_Code + "r", have_r);
                         PlayerPrefs.SetInt("frame", item_num);
                         txt_sec[0].text = "Lv.X";
-                        txt_sec[1].text = "품절";
+                        txt_sec[1].text = "SoldOut";
                         txt_sec[2].text = "X";
                         txt_sec[3].text = "X";
                         shop_sec.GetComponent<Button>().interactable = false;
@@ -382,8 +378,7 @@ public class Parkshop : MonoBehaviour
                     }
                     else
                     {
-                        txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
-                        popUp_obj.SetActive(true);
+                        SetNeedTxt();
                     }
                     break;
                 case 1://액자그림
@@ -400,7 +395,7 @@ public class Parkshop : MonoBehaviour
                         PlayerPrefs.SetInt(str_Code + "r", have_r);
                         PlayerPrefs.SetInt("draw", item_num);
                         txt_sec[0].text = "Lv.X";
-                        txt_sec[1].text = "품절";
+                        txt_sec[1].text = "SoldOut";
                         txt_sec[2].text = "X";
                         txt_sec[3].text = "X";
                         shop_sec.GetComponent<Button>().interactable = false;
@@ -408,8 +403,7 @@ public class Parkshop : MonoBehaviour
                     }
                     else
                     {
-                        txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
-                        popUp_obj.SetActive(true);
+                        SetNeedTxt();
                     }
                     break;
                 case 2://시계그림
@@ -426,7 +420,7 @@ public class Parkshop : MonoBehaviour
                         PlayerPrefs.SetInt(str_Code + "r", have_r);
                         PlayerPrefs.SetInt("draw", item_num);
                         txt_sec[0].text = "Lv.X";
-                        txt_sec[1].text = "품절";
+                        txt_sec[1].text = "SoldOut";
                         txt_sec[2].text = "X";
                         txt_sec[3].text = "X";
                         shop_sec.GetComponent<Button>().interactable = false;
@@ -434,8 +428,7 @@ public class Parkshop : MonoBehaviour
                     }
                     else
                     {
-                        txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
-                        popUp_obj.SetActive(true);
+                        SetNeedTxt();
                     }
                     break;
 
@@ -453,7 +446,7 @@ public class Parkshop : MonoBehaviour
                         PlayerPrefs.SetInt(str_Code + "r", have_r);
                         PlayerPrefs.SetInt("draw", item_num);
                         txt_sec[0].text = "Lv.X";
-                        txt_sec[1].text = "품절";
+                        txt_sec[1].text = "SoldOut";
                         txt_sec[2].text = "X";
                         txt_sec[3].text = "X";
                         shop_sec.GetComponent<Button>().interactable = false;
@@ -461,8 +454,7 @@ public class Parkshop : MonoBehaviour
                     }
                     else
                     {
-                        txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
-                        popUp_obj.SetActive(true);
+                        SetNeedTxt();
                     }
                     break;
             }
@@ -471,6 +463,15 @@ public class Parkshop : MonoBehaviour
         txt_rain.text = "" + PlayerPrefs.GetInt(str_Code + "r", 0);
         txt_heart.text = "" + PlayerPrefs.GetInt(str_Code + "h", 0);
         PlayerPrefs.Save();
+    }
+
+    /// <summary>
+    /// 부족하다
+    /// </summary>
+    void SetNeedTxt()
+    {
+        txt_Popup.text = "Not enough to do that.";
+        popUp_obj.SetActive(true);
     }
 
     public void FirstYN()

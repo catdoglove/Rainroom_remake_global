@@ -46,7 +46,7 @@ public class CityTalk : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             toast_obj.SetActive(true);
-            toast_txt.text = "여기서는 헤어질 수 없다.";
+            toast_txt.text = "(Exit the game is available at home)";
         }
     }
     
@@ -223,7 +223,7 @@ public class CityTalk : MonoBehaviour
     public void talkEat0() //순대
     {
         eatYN();
-        txt_bunsik_YN.text = "순대의 가격은 80";
+        txt_bunsik_YN.text = "The price of Sundae is " + "\n" + "80";
         ckFood = 0;
 
     }
@@ -231,21 +231,21 @@ public class CityTalk : MonoBehaviour
     public void talkEat1() //떡볶이
     {
         eatYN();
-        txt_bunsik_YN.text = "떡볶이 가격은 70";
+        txt_bunsik_YN.text = "The price of Tteokbokki is " + "\n" + "70";
         ckFood = 1;
     }
 
     public void talkEat2() //어묵
     {
         eatYN();
-        txt_bunsik_YN.text = "어묵의 가격은 50";
+        txt_bunsik_YN.text = "The price of Eomuk is " + "\n" + "50";
         ckFood = 2;
     }
 
     public void talkEat3() //튀김
     {
         eatYN();
-        txt_bunsik_YN.text = "튀김의 가격은 70";
+        txt_bunsik_YN.text = "The price of Fried is " + "\n" + "70";
         ckFood = 3;
     }
 
@@ -278,42 +278,42 @@ public class CityTalk : MonoBehaviour
 
     public void talkEat4() //커피
     {
-        txt_cafe_YN.text = "커피";
+        txt_cafe_YN.text = "Coffee";
         ckFood = 4;
         eatYN();
     }
 
     public void talkEat4_2() //차
     {
-        txt_cafe_YN.text = "차";
+        txt_cafe_YN.text = "Tea";
         ckFood = 44;
         eatYN();
     }
 
     public void talkEat5() //과일주스
     {
-        txt_cafe_YN.text = "과일주스";
+        txt_cafe_YN.text = "Fruit juice";
         ckFood = 5;
         eatYN();
     }
 
     public void talkEat6() //아이스크림
     {
-        txt_cafe_YN.text = "아이스크림";
+        txt_cafe_YN.text = "Ice cream";
         ckFood = 6;
         eatYN();
     }
 
     public void talkEat7() //빵
     {
-        txt_cafe_YN.text = "빵";
+        txt_cafe_YN.text = "Bread";
         ckFood = 7;
         eatYN();
     }
 
     public void talkEat8() //쿠키
     {
-        txt_cafe_YN.text = "쿠키";
+        txt_cafe_YN.text = "Cookie";
         ckFood = 8;
         eatYN();
     }
@@ -321,13 +321,13 @@ public class CityTalk : MonoBehaviour
     public void talkEat9() //샌드위치
     {
         eatYN();
-        txt_cafe_YN.text = "샌드위치";
+        txt_cafe_YN.text = "Sandwich";
         ckFood = 9;
     }
 
     public void talkEat9_10() //마카롱
     {
-        txt_cafe_YN.text = "마카롱";
+        txt_cafe_YN.text = "Macaron";
         ckFood = 10;
         eatYN();
     }
@@ -601,7 +601,7 @@ public class CityTalk : MonoBehaviour
                 }
                 else
                 {
-                    txt_bunsik_YN.text = "음.. 마음이 부족하구나";
+                    txt_bunsik_YN.text = "Umm.. There is a shortage of heart.";
                     bunsik_txt_heart.SetActive(false);
                 }
 
@@ -622,7 +622,7 @@ public class CityTalk : MonoBehaviour
                 }
                 else
                 {
-                    txt_bunsik_YN.text = "음.. 마음이 부족하구나";
+                    txt_bunsik_YN.text = "Umm.. There is a shortage of heart.";
                     bunsik_txt_heart.SetActive(false);
                 }
 
@@ -643,7 +643,7 @@ public class CityTalk : MonoBehaviour
                 }
                 else
                 {
-                    txt_bunsik_YN.text = "음.. 마음이 부족하구나";
+                    txt_bunsik_YN.text = "Umm.. There is a shortage of heart.";
                     bunsik_txt_heart.SetActive(false);
                 }
                 break;
@@ -663,7 +663,7 @@ public class CityTalk : MonoBehaviour
                 }
                 else
                 {
-                    txt_bunsik_YN.text = "음.. 마음이 부족하구나";
+                    txt_bunsik_YN.text = "Umm.. There is a shortage of heart.";
                     bunsik_txt_heart.SetActive(false);
                 }
                 break;
@@ -684,7 +684,7 @@ public class CityTalk : MonoBehaviour
                 else
                 {
                     toast_obj.SetActive(true);
-                    toast_txt.text = "마음이 부족하다.";
+                    toast_txt.text = "There is a shortage of heart.";
                 }
 
                 break;
@@ -705,7 +705,7 @@ public class CityTalk : MonoBehaviour
                 else
                 {
                     toast_obj.SetActive(true);
-                    toast_txt.text = "마음이 부족하다.";
+                    toast_txt.text = "There is a shortage of heart.";
                 }
                 break;
 
@@ -725,7 +725,7 @@ public class CityTalk : MonoBehaviour
                 else
                 {
                     toast_obj.SetActive(true);
-                    toast_txt.text = "마음이 부족하다.";
+                    toast_txt.text = "There is a shortage of heart.";
                 }
 
                 break;
@@ -746,7 +746,7 @@ public class CityTalk : MonoBehaviour
                 else
                 {
                     toast_obj.SetActive(true);
-                    toast_txt.text = "마음이 부족하다.";
+                    toast_txt.text = "There is a shortage of heart.";
                 }
                 break;
 
@@ -765,7 +765,7 @@ public class CityTalk : MonoBehaviour
                 else
                 {
                     toast_obj.SetActive(true);
-                    toast_txt.text = "마음이 부족하다.";
+                    toast_txt.text = "There is a shortage of heart.";
                 }
                 break;
 
@@ -784,7 +784,7 @@ public class CityTalk : MonoBehaviour
                 else
                 {
                     toast_obj.SetActive(true);
-                    toast_txt.text = "마음이 부족하다.";
+                    toast_txt.text = "There is a shortage of heart.";
                 }
                 break;
 
@@ -803,7 +803,7 @@ public class CityTalk : MonoBehaviour
                 else
                 {
                     toast_obj.SetActive(true);
-                    toast_txt.text = "마음이 부족하다.";
+                    toast_txt.text = "There is a shortage of heart.";
                 }
                 break;
 
@@ -822,7 +822,7 @@ public class CityTalk : MonoBehaviour
                 else
                 {
                     toast_obj.SetActive(true);
-                    toast_txt.text = "마음이 부족하다.";
+                    toast_txt.text = "There is a shortage of heart.";
                 }
                 break;
         }

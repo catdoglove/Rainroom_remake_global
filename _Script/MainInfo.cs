@@ -68,37 +68,37 @@ public class MainInfo : MonoBehaviour
         {
             sld_like.maxValue = 112;
             face.GetComponent<Image>().sprite = spr_face[1];
-            txt_likeLv.text = "[다음 호감도 조건]"+"\n"+"꾸준한 대화 및 창문,책 Lv.4이상";
+            txt_likeLv.text = "[Conditions for next Level]" + "\n"+ "Keep talking and Window, Book Lv.4 or more";
         }
         if (PlayerPrefs.GetInt("likelv", 0) == 2)
         {
             sld_like.maxValue = 224;
             face.GetComponent<Image>().sprite = spr_face[2];
-            txt_likeLv.text = "[다음 호감도 조건]" + "\n" + "꾸준한 대화 및 창문,책 Lv.6이상";
+            txt_likeLv.text = "[Conditions for next Level]" + "\n" + "Keep talking and Window, Book Lv.6 or more";
         }
         if (PlayerPrefs.GetInt("likelv", 0) == 3)
         {
             sld_like.maxValue = 316;
             face.GetComponent<Image>().sprite = spr_face[3];
-            txt_likeLv.text = "[다음 호감도 조건]" + "\n" + "꾸준한 대화 및 창문,책 Lv.8이상";
+            txt_likeLv.text = "[Conditions for next Level]" + "\n" + "Keep talking and Window, Book Lv.8 or more";
         }
         if (PlayerPrefs.GetInt("likelv", 0) == 4)
         {
             sld_like.maxValue = 360;
             face.GetComponent<Image>().sprite = spr_face[4];
-            txt_likeLv.text = "..할 말이 있어";
+            txt_likeLv.text = "..I have something to say.";
         }
         if (PlayerPrefs.GetInt("likelv", 0) == 5)
         {
             sld_like.maxValue = 415;
             face.GetComponent<Image>().sprite = spr_face[5];
-            txt_likeLv.text = "고마워 :)";
+            txt_likeLv.text = "Thank you :)";
         }
         if (PlayerPrefs.GetInt("likelv", 0) >= 6)
         {
             sld_like.maxValue = 415;
             face.GetComponent<Image>().sprite = spr_face[5];
-            txt_likeLv.text = "고마워 :)";
+            txt_likeLv.text = "Thank you :)";
             txt_faceLv.text = "" + (PlayerPrefs.GetInt("likelv", 0) - 5);
         }
 

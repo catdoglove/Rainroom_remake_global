@@ -264,7 +264,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u2190 \uB9C8\uC74C"
+  m_Text: "\u2190 Heart"
 --- !u!222 &8993609
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1101,7 +1101,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC544\uB2C8\uC624"
+  m_Text: No
 --- !u!222 &50324281
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1179,7 +1179,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
-  m_Text: "\uD589\uC6B4\uC758 \uC22B\uC790\uAC00\n\uB41C\uB2E4\uBA74 \uC0B0\uCC45\uC744\n\uB2E4\uB140\uC624\uC790"
+  m_Text: "If you achieve \nthe lucky number,\nlet's take a walk."
 --- !u!222 &52063532
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2235,7 +2235,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBB3C\uCEF5"
+  m_Text: Cup
 --- !u!222 &97732182
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4115,7 +4115,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC0B0\uB2E4"
+  m_Text: Yes
 --- !u!222 &209117772
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4313,7 +4313,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBB3C\uCEF5"
+  m_Text: Cup
 --- !u!222 &220321657
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4391,7 +4391,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBB3C\uCEF5"
+  m_Text: Cup
 --- !u!222 &221798171
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4842,7 +4842,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC548 \uBCF8\uB2E4"
+  m_Text: No
 --- !u!222 &259289766
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7252,7 +7252,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\uC774\uAC78\uB85C \uC0B4\uAE4C?"
+  m_Text: Buy this?
 --- !u!222 &322536354
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7481,7 +7481,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC774\uBD88"
+  m_Text: Duvet
 --- !u!222 &338703016
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8431,7 +8431,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\uC7A0\uC744 \uC798 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+  m_Text: "\rYou can put them to sleep."
 --- !u!222 &385481570
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8509,7 +8509,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB2EB\uAE30"
+  m_Text: Close
 --- !u!222 &391994538
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8982,7 +8982,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\uBC30\uACBD\uC74C"
+  m_Text: BGM
 --- !u!222 &426515331
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9160,7 +9160,7 @@ RectTransform:
   m_GameObject: {fileID: 439931068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 1}
+  m_LocalScale: {x: 0.7499998, y: 0.7499998, z: 1}
   m_Children: []
   m_Father: {fileID: 695030165}
   m_RootOrder: 0
@@ -9168,7 +9168,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 2, y: 0}
-  m_SizeDelta: {x: 421.08215, y: 83.170456}
+  m_SizeDelta: {x: 461.91052, y: 83.170456}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &439931070
 MonoBehaviour:
@@ -9191,7 +9191,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7ac3691fcb3297b4597ba72a09183efa, type: 3}
-    m_FontSize: 33
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -9202,8 +9202,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
-  m_Text: "\uAD6C\uC785\uD558\uAE30\uC5D0\uB294\n\uAC00\uC9C0\uACE0 \uC788\uB294
-    \uAC83\uC774 \uBD80\uC871\uD558\uB2E4."
+  m_Text: Not enough to do that.
 --- !u!222 &439931071
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9281,7 +9280,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB2EB\uAE30"
+  m_Text: Close
 --- !u!222 &442889536
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9686,7 +9685,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC900\uB2E4"
+  m_Text: Give
 --- !u!222 &460325059
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9796,7 +9795,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465010601}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -9944,7 +9943,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.3709, y: 23.2}
+  m_AnchoredPosition: {x: 1.3709, y: 32.38}
   m_SizeDelta: {x: 286.7717, y: 59.49752}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &466942415
@@ -9979,7 +9978,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\uC774\uAC78\uB85C \uBA39\uC744\uAE4C?"
+  m_Text: Order this?
 --- !u!222 &466942416
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10744,7 +10743,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBCF4\uAD00 \uAC00\uB2A5 \uBB3C\uAC74\uB4E4"
+  m_Text: Storable things
 --- !u!222 &500471276
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12067,7 +12066,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB098\uAC00\uAE30"
+  m_Text: Close
 --- !u!222 &527200268
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12708,7 +12707,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC528\uC557"
+  m_Text: Seed
 --- !u!222 &556092652
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13526,8 +13525,10 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "\uAC1C\uC778\uC815\uBCF4 \uC815\uCC45"
+    m_LineSpacing: 0.7
+  m_Text: 'Terms
+
+    Conditions'
 --- !u!222 &602700312
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14178,7 +14179,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB124"
+  m_Text: Yes
 --- !u!222 &631548214
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14398,7 +14399,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB2EB\uAE30"
+  m_Text: Close
 --- !u!222 &635188458
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14628,7 +14629,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB3C4\uC6C0\uB9D0"
+  m_Text: Help
 --- !u!222 &640282296
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15638,7 +15639,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\uC815\uB9D0 \uAD50\uD658\uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
+  m_Text: Change this?
 --- !u!222 &676617864
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15681,7 +15682,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -61.4, y: -0.00000047726}
+  m_AnchoredPosition: {x: -32, y: -0.00000047726}
   m_SizeDelta: {x: 41.130157, y: 34.960632}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &679866688
@@ -15791,7 +15792,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uAC70\uBD81\uC774"
+  m_Text: Turtle
 --- !u!222 &680911215
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15869,7 +15870,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB2EB\uAE30"
+  m_Text: Close
 --- !u!222 &682783186
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16383,7 +16384,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "    \uC744         \uC73C\uB85C"
+  m_Text: ->
 --- !u!222 &694662155
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16429,7 +16430,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 342.0721, y: 93.69392}
+  m_SizeDelta: {x: 378.30228, y: 93.69392}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &695030166
 MonoBehaviour:
@@ -16699,7 +16700,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -103.1, y: 21.7}
+  m_AnchoredPosition: {x: 14.8, y: 30.074}
   m_SizeDelta: {x: 70.76137, y: 60.147156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &722027273
@@ -19453,8 +19454,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
-  m_Text: "\uAD6C\uC785\uD558\uAE30\uC5D0\uB294\n\uAC00\uC9C0\uACE0 \uC788\uB294
-    \uAC83\uC774 \uBD80\uC871\uD558\uB2E4."
+  m_Text: Not enough to do that.
 --- !u!222 &817726928
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21232,7 +21232,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uAD50\uD658"
+  m_Text: Exchange
 --- !u!222 &926489207
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21450,7 +21450,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC548 \uC794\uB2E4"
+  m_Text: Don't
 --- !u!222 &928532165
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21528,10 +21528,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBE44\uB0B4\uB9AC\uB294 \uB2E8\uCE78\uBC29 \uC218\uC815 \uBC84\uC804
-    \uCD9C\uC2DC \uAE30\uB150\n\uC791\uC740 \uC120\uBB3C\uC774 \uC9C0\uAE09\uB418\uC5C8\uC2B5\uB2C8\uB2E4.\r\n\u3141
-    10,  \u3147 1000\r\n\uAE30\uB2E4\uB824 \uC8FC\uC154\uC11C \uAC10\uC0AC\uD569\uB2C8\uB2E4
-    :)"
+  m_Text: "We launched Rainy Attic Room's previous game, Rainy Single Room.\nSo we
+    will give you a little gift.\n     10       1000\nThanks"
 --- !u!222 &929571076
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21609,8 +21607,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "(\uAD00\uB828 \uC0AC\uD56D\uC740 \uC2A4\uD1A0\uC5B4 \uB0B4\uC5D0\uC11C
-    \uD655\uC778\uD574\uC8FC\uC138\uC694)"
+  m_Text: (Please check the Store for related things)
 --- !u!222 &929883675
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22111,7 +22108,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB2EB\uAE30"
+  m_Text: Close
 --- !u!222 &952215805
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22269,8 +22266,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "[\uB2E4\uC74C \uD638\uAC10\uB3C4 \uC870\uAC74]\n\uAFB8\uC900\uD55C \uB300\uD654
-    \uBC0F \uCC3D\uBB38,\uCC45 Lv.2\uC774\uC0C1"
+  m_Text: '[Conditions for next Level]
+
+    Keep talking and Window, Book Lv.2 or
+    more'
 --- !u!222 &961575055
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22705,7 +22704,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "  \uC774 \uBD80\uC871\uD558\uB2E4"
+  m_Text: '   Not enough'
 --- !u!222 &970581481
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22858,7 +22857,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB2EB\uAE30"
+  m_Text: Close
 --- !u!222 &981362484
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23100,7 +23099,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB2EB\uAE30"
+  m_Text: Close
 --- !u!222 &988830055
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24785,7 +24784,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBB3C\uCEF5"
+  m_Text: Cup
 --- !u!222 &1052139077
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24863,7 +24862,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC548 \uBA39\uB294\uB2E4"
+  m_Text: No
 --- !u!222 &1064741561
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25079,7 +25078,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\uCC45\uC5D0 \uB300\uD558\uC5EC"
+  m_Text: About the book
 --- !u!222 &1081481275
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25625,7 +25624,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBB3C\uC744 \uC904\uAE4C?"
+  m_Text: Water this?
 --- !u!222 &1116985364
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25703,7 +25702,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC548 \uC900\uB2E4"
+  m_Text: Don't give
 --- !u!222 &1117201815
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25922,7 +25921,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC794\uB2E4"
+  m_Text: Sleep
 --- !u!222 &1123445440
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26367,7 +26366,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC544\uB2C8\uC624"
+  m_Text: No
 --- !u!222 &1152683409
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27800,7 +27799,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB2EB\uAE30"
+  m_Text: Close
 --- !u!222 &1185547471
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27843,7 +27842,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -60.3, y: -20.8}
+  m_AnchoredPosition: {x: -60.3, y: -56.1}
   m_SizeDelta: {x: 80, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1195721146
@@ -28027,7 +28026,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB124"
+  m_Text: Yes
 --- !u!222 &1207850486
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28351,7 +28350,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14.4, y: -20.8}
+  m_AnchoredPosition: {x: 14.4, y: -56.1}
   m_SizeDelta: {x: 80, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1227704425
@@ -29728,7 +29727,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.4, y: -1.2129}
+  m_AnchoredPosition: {x: 33.800003, y: -1.2129}
   m_SizeDelta: {x: 43.984123, y: 37.386505}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1276069926
@@ -29838,7 +29837,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBA39\uB294\uB2E4"
+  m_Text: Yes
 --- !u!222 &1279003157
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30135,7 +30134,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC548 \uC0B0\uB2E4"
+  m_Text: No
 --- !u!222 &1293981466
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30682,9 +30681,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "(\uC7A0\uB4E4\uBA74 \uC911\uAC04\uC5D0 \uAE68\uC5B4\uB0A0 \uC218 \uC5C6\uC73C\uBA70
-    \n\uC5B4\uB5A4 \uBC84\uD2BC\uB3C4 \uB204\uB97C \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.\n\uC815\uB9D0
-    6\uC2DC\uAC04\uB3D9\uC548 \uC7A0\uC744 \uC7A1\uB2C8\uB2E4.)"
+  m_Text: '(You can''t wake them up while they''re sleeping.
+
+    And you can''t
+    tap any button.
+
+    It takes 6 hours.)'
 --- !u!222 &1304603915
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30936,7 +30938,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB2EB\uAE30"
+  m_Text: Close
 --- !u!222 &1313799859
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32056,7 +32058,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB124"
+  m_Text: Yes
 --- !u!222 &1432495490
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33068,8 +33070,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.8, y: -24}
-  m_SizeDelta: {x: 231.29684, y: 72.7262}
+  m_AnchoredPosition: {x: 11.59, y: -24}
+  m_SizeDelta: {x: 232.87332, y: 72.7262}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1496108792
 MonoBehaviour:
@@ -33092,10 +33094,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d8fec7f3beaac524a9f12a701e3c0dc6, type: 3}
-    m_FontSize: 20
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -33103,8 +33105,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "      \uACFC \uAC19\uC774\n\uBC29\uC744 \uAFB8\uBC00 \uB54C \uD544\uC694\uD55C
-    \uC694\uC18C"
+  m_Text: "It's the same as \nYou need these when you buy things off of the shop."
 --- !u!222 &1496108793
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33439,7 +33440,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "(\uC774\uB294 \uC0C1\uC810\uC5D0\uC11C \uD655\uC778 \uAC00\uB2A5)"
+  m_Text: (This can be seen in the shop)
 --- !u!222 &1529623994
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33638,7 +33639,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.9, y: -0.00000047726}
+  m_AnchoredPosition: {x: 32.4, y: -0.00000047726}
   m_SizeDelta: {x: 41.130157, y: 34.960632}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1567179477
@@ -35523,7 +35524,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\uAD11\uACE0\uB97C \uC815\uB9D0 \uBCFC\uAE4C\uC694?"
+  m_Text: Do you really watch ads?
 --- !u!222 &1645906614
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -35757,7 +35758,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB2EB\uAE30"
+  m_Text: Close
 --- !u!222 &1661167913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36028,8 +36029,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -61.000336, y: 17.1819}
-  m_SizeDelta: {x: 166.04208, y: 60.000008}
+  m_AnchoredPosition: {x: 2.42, y: 17.1819}
+  m_SizeDelta: {x: 292.8736, y: 60.000008}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1694567272
 MonoBehaviour:
@@ -36052,7 +36053,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d8fec7f3beaac524a9f12a701e3c0dc6, type: 3}
-    m_FontSize: 28
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -36063,7 +36064,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u2190 \uD638\uAC10\uB3C4"
+  m_Text: "\u2190 Gauge of Familiarity"
 --- !u!222 &1694567273
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36986,7 +36987,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC544\uB2C8\uC624"
+  m_Text: No
 --- !u!222 &1732511235
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37675,7 +37676,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBB3C\uCEF5"
+  m_Text: Cup
 --- !u!222 &1760778463
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38232,7 +38233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -65.5, y: -1.2129}
+  m_AnchoredPosition: {x: -39, y: -1.2129}
   m_SizeDelta: {x: 43.984123, y: 37.386505}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1801581734
@@ -38331,7 +38332,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7ac3691fcb3297b4597ba72a09183efa, type: 3}
-    m_FontSize: 22
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -38341,8 +38342,8 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "\uB300\uD654\uC18D\uB3C4 \uBCF4\uD1B5"
+    m_LineSpacing: 0.7
+  m_Text: Conversation Speed Normal
 --- !u!222 &1815179789
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38937,7 +38938,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBCF8\uB2E4"
+  m_Text: Yes
 --- !u!222 &1845327012
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40621,7 +40622,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC2DC\uCCAD\uD558\uAE30"
+  m_Text: Watch
 --- !u!222 &1962219099
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41072,8 +41073,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\uC9E7\uC740 \uAD11\uACE0\uB97C \uC2DC\uCCAD\uD558\uACE0 \n\uB300\uD654
-    \uD69F\uC218\uB97C \uCD08\uAE30\uD654 \uD569\uB2C8\uB2E4."
+  m_Text: 'Watch short video
+
+    Return number of talk back to 5'
 --- !u!222 &1996429220
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41499,7 +41501,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC815\uB9D0 \uAD50\uD658\uD560\uAE4C\uC694?"
+  m_Text: Change this?
 --- !u!222 &2008090090
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41542,8 +41544,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.893616, y: -24}
-  m_SizeDelta: {x: 266.23645, y: 72.7262}
+  m_AnchoredPosition: {x: 14.15, y: -25.58}
+  m_SizeDelta: {x: 284.9616, y: 75.88188}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2010433390
 MonoBehaviour:
@@ -41566,10 +41568,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d8fec7f3beaac524a9f12a701e3c0dc6, type: 3}
-    m_FontSize: 20
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -41577,8 +41579,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\uD30C\uB780 \uBC14\uAC00 \uB05D\uAE4C\uC9C0 \uB2FF\uACE0\n\uC544\uB798
-    \uC870\uAC74\uC744 \uB9CC\uC871\uD558\uBA74 \uD638\uAC10 \uC0C1\uC2B9"
+  m_Text: "\rIf you want to next Level of Familiarity,\r\nYou must fill up the Gauge
+    of Familiarity.\r\nAnd achieve the red sentence."
 --- !u!222 &2010433391
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41656,7 +41658,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Lv.MAX \uBB3C\uAC74\uB4E4"
+  m_Text: Lv.MAX things
 --- !u!222 &2012033053
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41887,7 +41889,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\uD6A8\uACFC\uC74C"
+  m_Text: SE
 --- !u!222 &2015522652
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -42222,7 +42224,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "    \uC744         \uC73C\uB85C"
+  m_Text: ->
 --- !u!222 &2051858510
 CanvasRenderer:
   m_ObjectHideFlags: 0

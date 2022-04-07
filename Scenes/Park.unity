@@ -716,7 +716,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -42.899994, y: 17.270014}
+  m_AnchoredPosition: {x: -90.5, y: 17.3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &151828675
@@ -872,8 +872,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11, y: -0.000005722}
-  m_SizeDelta: {x: 196.16296, y: 141.00519}
+  m_AnchoredPosition: {x: -8.9, y: -0.000005722}
+  m_SizeDelta: {x: 226.27234, y: 141.00519}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &162069588
 MonoBehaviour:
@@ -901,13 +901,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "...\uB2EC\uACE0\uB098 \uD558\uB098\uC5D0\n      50\uC774\uB780\uB2E4"
+  m_Text: "One dalgona price is \n       50"
 --- !u!222 &162069589
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1388,7 +1388,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC548 \uC0B0\uB2E4"
+  m_Text: Don't
 --- !u!222 &286455636
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1784,7 +1784,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC548 \uBA39\uB294\uB2E4"
+  m_Text: Don't
 --- !u!222 &391059862
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3004,7 +3004,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB2EB\uAE30"
+  m_Text: Close
 --- !u!222 &635188458
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3048,7 +3048,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.8, y: 53.000004}
+  m_AnchoredPosition: {x: 50.6, y: 50.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &658219676
@@ -3158,7 +3158,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBB3C\uCEF5"
+  m_Text: Cup
 --- !u!222 &680911215
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3201,7 +3201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 132.14917, y: -27}
+  m_AnchoredPosition: {x: 73.502174, y: -20.407898}
   m_SizeDelta: {x: 218.86963, y: 114.46509}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &696306146
@@ -3236,7 +3236,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
-  m_Text: "\uBA39\uC774\uB97C \uC904\uAE4C?\n(      50\uC744 \uC90D\uB2C8\uB2E4.)"
+  m_Text: ' Feed this?
+
+    (      50 use)'
 --- !u!222 &696306147
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4217,7 +4219,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\uC774\uAC78\uB85C \uC0B4\uAE4C?"
+  m_Text: Buy this?
 --- !u!222 &903918042
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4763,8 +4765,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "(\uAD00\uB828 \uC0AC\uD56D\uC740 \uC2A4\uD1A0\uC5B4 \uB0B4\uC5D0\uC11C
-    \uD655\uC778\uD574\uC8FC\uC138\uC694)"
+  m_Text: (Please check the Store for related things)
 --- !u!222 &929883675
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5213,7 +5214,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB2EB\uAE30"
+  m_Text: Close
 --- !u!222 &952215805
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5420,7 +5421,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBB3C\uCEF5"
+  m_Text: Cup
 --- !u!222 &970519943
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5824,7 +5825,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC548 \uC900\uB2E4"
+  m_Text: Don't give
 --- !u!222 &992891878
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5902,7 +5903,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC0B0\uB2E4"
+  m_Text: Buy
 --- !u!222 &1002021487
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6521,7 +6522,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC900\uB2E4"
+  m_Text: Give
 --- !u!222 &1172135619
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6755,7 +6756,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB2EB\uAE30"
+  m_Text: Close
 --- !u!222 &1185547471
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7445,7 +7446,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
-  m_Text: "\uC5EC\uAE30\uC11C\uB294 \uD5E4\uC5B4\uC9C8 \uC218 \uC5C6\uB2E4."
+  m_Text: (Exit the game is available at home)
 --- !u!222 &1411855430
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7488,8 +7489,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 132.14917, y: -14.191078}
-  m_SizeDelta: {x: 218.86963, y: 114.46509}
+  m_AnchoredPosition: {x: 136.25, y: -14.191078}
+  m_SizeDelta: {x: 233.69818, y: 114.46509}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1426876487
 MonoBehaviour:
@@ -7523,7 +7524,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
-  m_Text: "\uBC30\uBD88\uB7EC \uBCF4\uC778\uB2E4.\n\uB2E4\uC74C\uC5D0 \uC8FC\uC790"
+  m_Text: 'The cat seems to full.
+
+    Feed it next time.'
 --- !u!222 &1426876488
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7897,7 +7900,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBA39\uB294\uB2E4"
+  m_Text: Eat
 --- !u!222 &1493583578
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9610,7 +9613,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC774 \uBD80\uC871\uD574.."
+  m_Text: '   Not enough'
 --- !u!222 &1925198315
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9689,7 +9692,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC74C..      \uC774 \uBD80\uC871\uD558\uAD6C\uB098"
+  m_Text: Umm.. Not enough
 --- !u!222 &1939785192
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9767,7 +9770,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC2DC\uCCAD\uD558\uAE30"
+  m_Text: Watch
 --- !u!222 &1962219099
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10195,8 +10198,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 57.66, y: -22}
-  m_SizeDelta: {x: 344.50742, y: 107.48181}
+  m_AnchoredPosition: {x: 57.66, y: -17.38}
+  m_SizeDelta: {x: 344.50742, y: 116.899506}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1996429219
 MonoBehaviour:
@@ -10230,8 +10233,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\uC9E7\uC740 \uAD11\uACE0\uB97C \uC2DC\uCCAD\uD558\uACE0\n\uB300\uD654
-    \uD69F\uC218\uB97C \uCD08\uAE30\uD654 \uD569\uB2C8\uB2E4."
+  m_Text: "Watch short video\nReturn number of talk \nback to 5"
 --- !u!222 &1996429220
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10576,7 +10578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.1, y: 52.33}
+  m_AnchoredPosition: {x: -79.1, y: 16.4}
   m_SizeDelta: {x: 92.09085, y: 92.09085}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2109881274
@@ -10750,8 +10752,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11, y: 0}
-  m_SizeDelta: {x: 196.16296, y: 141.00519}
+  m_AnchoredPosition: {x: -7.66, y: 0}
+  m_SizeDelta: {x: 208.44034, y: 141.00519}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2122887220
 MonoBehaviour:
@@ -10784,8 +10786,10 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "\uC774\uC81C \uC5C6\uB2E8\uB2E4.\n\uB2E4\uC74C\uC5D0 \uC624\uB834"
+    m_LineSpacing: 0.9
+  m_Text: 'There''s no more so
+
+    please come next time.'
 --- !u!222 &2122887221
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -90,7 +90,7 @@ public class MainShop : MonoBehaviour
             //레벨
             txt_turtle[0].text = "Lv.MAX";
             //이름
-            txt_turtle[1].text = "거북이";
+            txt_turtle[1].text = "Turtle";
             //물
             txt_turtle[2].text = "x";
             //마음
@@ -103,21 +103,21 @@ public class MainShop : MonoBehaviour
             //레벨
             txt_seed[0].text = "Lv.MAX";
             //이름
-            txt_seed[1].text = "씨앗";
+            txt_seed[1].text = "Seed";
             //물
             txt_seed[2].text = "x";
             //마음
             txt_seed[3].text = "x";
             seed_obj.SetActive(true);
         }
-
+        
         if (PlayerPrefs.GetInt("bedlv", 0) >= 1)
         {
             shopBtn_obj[7].GetComponent<Button>().interactable = false;
             //레벨
             txt_bed[0].text = "Lv.MAX";
             //이름
-            txt_bed[1].text = "이불";
+            txt_bed[1].text = "Duvet";
             //물
             txt_bed[2].text = "x";
             //마음
@@ -141,7 +141,7 @@ public class MainShop : MonoBehaviour
             //레벨
             txt_cup[0].text = "Lv.MAX";
             //이름
-            txt_cup[1].text = "물컵";
+            txt_cup[1].text = "Cup";
             //물
             txt_cup[2].text = "x";
             //마음
@@ -154,7 +154,7 @@ public class MainShop : MonoBehaviour
             //레벨
             txt_book[0].text = "Lv.MAX";
             //이름
-            txt_book[1].text = "책장";
+            txt_book[1].text = "Bookshelf";
             //물
             txt_book[2].text = "x";
             //마음
@@ -166,7 +166,7 @@ public class MainShop : MonoBehaviour
             //레벨
             txt_wall[0].text = "Lv.MAX";
             //이름
-            txt_wall[1].text = "깨끗한벽지";
+            txt_wall[1].text = "Cozy wallpaper";
             //물
             txt_wall[2].text = "x";
             //마음
@@ -178,7 +178,7 @@ public class MainShop : MonoBehaviour
             //레벨
             txt_light[0].text = "Lv.MAX";
             //이름
-            txt_light[1].text = "불켜진 전구";
+            txt_light[1].text = "A light bulb";
             //물
             txt_light[2].text = "x";
             //마음
@@ -190,7 +190,7 @@ public class MainShop : MonoBehaviour
             //레벨
             txt_window[0].text = "Lv.MAX";
             //이름
-            txt_window[1].text = "예쁜커튼";
+            txt_window[1].text = "Complete curtain";
             //물
             txt_window[2].text = "x";
             //마음
@@ -465,106 +465,106 @@ public class MainShop : MonoBehaviour
     void setPrice()
     {
         //물마음-창문
-        window_name[0] = "깨진창문";
+        window_name[0] = "Cracked window";
         cost_window[0] = 0;
         cost_window[1] = 15;
 
-        window_name[1] = "보수된창문";
+        window_name[1] = "Repaired window";
         cost_window[2] = 60;
         cost_window[3] = 30;
 
-        window_name[2] = "보수된창문+";
+        window_name[2] = "Repaired window+";
         cost_window[4] = 500;
         cost_window[5] = 100;
 
-        window_name[3] = "창문";
+        window_name[3] = "Window";
         cost_window[6] = 1000;
         cost_window[7] = 120;
 
-        window_name[4] = "스티커붙이기";
+        window_name[4] = "Sticker attach";
         cost_window[8] = 2000;
         cost_window[9] = 150;
 
-        window_name[5] = "스티커붙이기+";
+        window_name[5] = "Sticker attach+";
         cost_window[10] = 5000;
         cost_window[11] = 190;
 
-        window_name[6] = "커튼달린창문";
+        window_name[6] = "Curtained window";
         cost_window[12] = 9000;
         cost_window[13] = 240;
 
-        window_name[7] = "밝은커튼";
+        window_name[7] = "Bright curtain";
         cost_window[14] = 15000;
         cost_window[15] = 400;
 
-        window_name[8] = "예쁜커튼";
+        window_name[8] = "Complete curtain";
         cost_window[16] = 0;
         cost_window[17] = 0;
 
         //물마음-벽
-        wall_name[0] = "습기찬벽지";
+        wall_name[0] = "Leaky wallpaper";
         cost_wall[0] = 4000;
         cost_wall[1] = 300;
 
-        wall_name[1] = "보수된벽지";
+        wall_name[1] = "Repaired wallpaper";
         cost_wall[2] = 15000;
         cost_wall[3] = 500;
 
-        wall_name[2] = "깨끗한벽지";
+        wall_name[2] = "Cozy wallpaper";
         cost_wall[4] = 0;
         cost_wall[5] = 0;
 
         //물마음-책
-        book_name[0] = "전단지";
+        book_name[0] = "Leaflet";
         cost_book[0] = 0;
         cost_book[1] = 10;
 
-        book_name[1] = "신문";
+        book_name[1] = "Newspaper";
         cost_book[2] = 50;
         cost_book[3] = 20;
 
-        book_name[2] = "찢어진 잡지";
+        book_name[2] = "Torn magazine";
         cost_book[4] = 300;
         cost_book[5] = 50;
 
-        book_name[3] = "위인전";
+        book_name[3] = "Biography";
         cost_book[6] = 1000;
         cost_book[7] = 70;
 
-        book_name[4] = "요리책";
+        book_name[4] = "Cookbook";
         cost_book[8] = 2000;
         cost_book[9] = 100;
 
-        book_name[5] = "동화책";
+        book_name[5] = "Fairy tale book";
         cost_book[10] = 5000;
         cost_book[11] = 130;
 
-        book_name[6] = "유머책";
+        book_name[6] = "Humor book";
         cost_book[12] = 9000;
         cost_book[13] = 160;
 
-        book_name[7] = "만화책";
+        book_name[7] = "Comic book";
         cost_book[14] = 15000;
         cost_book[15] = 200;
 
-        book_name[8] = "소설책";
+        book_name[8] = "A short story book";
         cost_book[16] = 30000;
         cost_book[17] = 450;
 
-        book_name[9] = "책장";
+        book_name[9] = "Bookshelf";
         cost_book[18] = 0;
         cost_book[19] = 0;
 
         //물마음-전등
-        light_name[0] = "깨진 전구";
+        light_name[0] = "A broken bulb";
         cost_light[0] = 10000;
         cost_light[1] = 100;
 
-        light_name[1] = "전구";
+        light_name[1] = "A bulb";
         cost_light[2] = 15000;
         cost_light[3] = 200;
 
-        light_name[2] = "불켜진 전구";
+        light_name[2] = "A light bulb";
         cost_light[4] = 0;
         cost_light[5] = 0;
     }
@@ -594,14 +594,12 @@ public class MainShop : MonoBehaviour
                 }
                 else
                 {
-                    shopPopup_obj.SetActive(true);
-                    txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
+                    SetBuyText();
                 }
             }
             else
             {
-                shopPopup_obj.SetActive(true);
-                txt_Popup.text = "구입하기에는"+"\n"+"가지고 있는 것이 부족하다.";
+                SetBuyText();
             }
         }
     }
@@ -630,14 +628,12 @@ public class MainShop : MonoBehaviour
                 }
                 else
                 {
-                    shopPopup_obj.SetActive(true);
-                    txt_Popup.text = "구입하기에는"+"\n"+"가지고 있는 것이 부족하다.";
+                    SetBuyText();
                 }
             }
             else
             {
-                shopPopup_obj.SetActive(true);
-                txt_Popup.text = "구입하기에는"+"\n"+"가지고 있는 것이 부족하다.";
+                SetBuyText();
             }
         }
     }
@@ -666,14 +662,12 @@ public class MainShop : MonoBehaviour
                 }
                 else
                 {
-                    shopPopup_obj.SetActive(true);
-                    txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
+                    SetBuyText();
                 }
             }
             else
             {
-                shopPopup_obj.SetActive(true);
-                txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
+                SetBuyText();
             }
         }
     }
@@ -717,14 +711,12 @@ public class MainShop : MonoBehaviour
                 }
                 else
                 {
-                    shopPopup_obj.SetActive(true);
-                    txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
+                    SetBuyText();
                 }
             }
             else
             {
-                shopPopup_obj.SetActive(true);
-                txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
+                SetBuyText();
             }
         }
     }
@@ -756,7 +748,7 @@ public class MainShop : MonoBehaviour
                     //레벨
                     txt_turtle[0].text = "Lv.MAX";
                     //이름
-                    txt_turtle[1].text = "거북이";
+                    txt_turtle[1].text = "Turtle";
                     //물
                     txt_turtle[2].text = "x";
                     //마음
@@ -767,14 +759,12 @@ public class MainShop : MonoBehaviour
                 }
                 else
                 {
-                    shopPopup_obj.SetActive(true);
-                    txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
+                    SetBuyText();
                 }
             }
             else
             {
-                shopPopup_obj.SetActive(true);
-                txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
+                SetBuyText();
             }
         }
     }
@@ -805,7 +795,7 @@ public class MainShop : MonoBehaviour
                     //레벨
                     txt_seed[0].text = "Lv.MAX";
                     //이름
-                    txt_seed[1].text = "씨앗";
+                    txt_seed[1].text = "Seed";
                     //물
                     txt_seed[2].text = "x";
                     //마음
@@ -815,14 +805,12 @@ public class MainShop : MonoBehaviour
                 }
                 else
                 {
-                    shopPopup_obj.SetActive(true);
-                    txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
+                    SetBuyText();
                 }
             }
             else
             {
-                shopPopup_obj.SetActive(true);
-                txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
+                SetBuyText();
             }
         }
     }
@@ -852,7 +840,7 @@ public class MainShop : MonoBehaviour
                     //레벨
                     txt_bed[0].text = "Lv.MAX";
                     //이름
-                    txt_bed[1].text = "이불";
+                    txt_bed[1].text = "Duvet";
                     //물
                     txt_bed[2].text = "x";
                     //마음
@@ -862,14 +850,12 @@ public class MainShop : MonoBehaviour
                 }
                 else
                 {
-                    shopPopup_obj.SetActive(true);
-                    txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
+                    SetBuyText();
                 }
             }
             else
             {
-                shopPopup_obj.SetActive(true);
-                txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
+                SetBuyText();
             }
         }
     }
@@ -900,7 +886,7 @@ public class MainShop : MonoBehaviour
                     //레벨
                     txt_cup[0].text = "Lv.MAX";
                     //이름
-                    txt_cup[1].text = "물컵";
+                    txt_cup[1].text = "Cup";
                     //물
                     txt_cup[2].text = "x";
                     //마음
@@ -912,16 +898,20 @@ public class MainShop : MonoBehaviour
                 }
                 else
                 {
-                    shopPopup_obj.SetActive(true);
-                    txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
+                    SetBuyText();
                 }
             }
             else
             {
-                shopPopup_obj.SetActive(true);
-                txt_Popup.text = "구입하기에는" + "\n" + "가지고 있는 것이 부족하다.";
+                SetBuyText();
             }
         }
+    }
+
+    void SetBuyText()
+    {
+        shopPopup_obj.SetActive(true);
+        txt_Popup.text = "Not enough to do that.";
     }
 
     void WindowRe()
@@ -950,7 +940,7 @@ public class MainShop : MonoBehaviour
             shopBtn_obj[3].GetComponent<Button>().interactable = false;
             txt_window[0].text = "Lv.MAX";
             //이름
-            txt_window[1].text = "예쁜커튼";
+            txt_window[1].text = "Complete curtain";
             //물
             txt_window[2].text = "x";
             //마음
@@ -984,7 +974,7 @@ public class MainShop : MonoBehaviour
             shopBtn_obj[5].GetComponent<Button>().interactable = false;
             txt_wall[0].text = "Lv.MAX";
             //이름
-            txt_wall[1].text = "깨끗한벽지";
+            txt_wall[1].text = "Cozy wallpaper";
             //물
             txt_wall[2].text = "x";
             //마음
@@ -1133,7 +1123,7 @@ public class MainShop : MonoBehaviour
             //레벨
             txt_window[0].text = "Lv.MAX";
             //이름
-            txt_window[1].text = "예쁜커튼";
+            txt_window[1].text = "Complete curtain";
             //물
             txt_window[2].text = "x";
             //마음
@@ -1259,7 +1249,7 @@ public class MainShop : MonoBehaviour
     public void showBookAllTxt()
     {
         memoImg.SetActive(true);
-        txt_memoName[0].text = "책에 대하여";
+        txt_memoName[0].text = "About the book";
         memoFalse();
         txt_memoName[1].text = str_memo[0];
     }
@@ -1267,7 +1257,7 @@ public class MainShop : MonoBehaviour
     public void showWindowAllTxt()
     {
         memoImg.SetActive(true);
-        txt_memoName[0].text = "창문에 대하여";
+        txt_memoName[0].text = "About the window";
         memoFalse();
         txt_memoName[1].text = str_memo[1];
     }
@@ -1275,7 +1265,7 @@ public class MainShop : MonoBehaviour
     public void showSeedAllTxt()
     {
         memoImg.SetActive(true);
-        txt_memoName[0].text = "씨앗에 대하여";
+        txt_memoName[0].text = "About the seed";
         memoFalse();
         txt_memoName[1].text = str_memo[2];
     }
@@ -1283,7 +1273,7 @@ public class MainShop : MonoBehaviour
     public void showLightAllTxt()
     {
         memoImg.SetActive(true);
-        txt_memoName[0].text = "전등에 대하여";
+        txt_memoName[0].text = "About the light";
         memoFalse();
         txt_memoName[1].text = str_memo[3];
         memoImg.SetActive(true);
@@ -1293,7 +1283,7 @@ public class MainShop : MonoBehaviour
     public void showWallAllTxt()
     {
         memoImg.SetActive(true);
-        txt_memoName[0].text = "벽지에 대하여";
+        txt_memoName[0].text = "About the wall";
         memoFalse();
         txt_memoName[1].text = str_memo[4];
 
@@ -1301,7 +1291,7 @@ public class MainShop : MonoBehaviour
     public void showClockAllTxt()
     {
         memoImg.SetActive(true);
-        txt_memoName[0].text = "시계에 대하여";
+        txt_memoName[0].text = "About the clock";
         memoFalse();
         txt_memoName[1].text = str_memo[5];
     }
@@ -1309,7 +1299,7 @@ public class MainShop : MonoBehaviour
     public void showPictureAllTxt()
     {
         memoImg.SetActive(true);
-        txt_memoName[0].text = "그림에 대하여";
+        txt_memoName[0].text = "About the paint";
         memoFalse();
         txt_memoName[1].text = str_memo[6];
     }
@@ -1329,7 +1319,7 @@ public class MainShop : MonoBehaviour
     public void SwichPop()
     {
         shopPopup_obj.SetActive(true);
-        txt_Popup.text = "잘 때 사용할 수 있다.";
+        txt_Popup.text = "This can be used to sleep.";
     }
 
 
