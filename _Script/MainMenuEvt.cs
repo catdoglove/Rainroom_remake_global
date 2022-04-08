@@ -36,13 +36,13 @@ public class MainMenuEvt : MonoBehaviour
         switch (PlayerPrefs.GetFloat("talkspeed", 0.05f))
         {
             case 0.05f:
-                speed_txt.text = "Conversation Speed Normal";
+                speed_txt.text = "Talk Speed Normal";
                 break;
             case 0.03f:
-                speed_txt.text = "Conversation Speed Fast";
+                speed_txt.text = "Talk Speed Fast";
                 break;
             case 0.07f:
-                speed_txt.text = "Conversation Speed Slow";
+                speed_txt.text = "Talk Speed Slow";
                 break;
         }
 
@@ -261,17 +261,25 @@ public class MainMenuEvt : MonoBehaviour
 
     public void HelpR()
     {
-        if (help_i == 3)
+        if (help_i == 4)
         {
             help_obj.SetActive(false);
             helpR_obj.SetActive(true);
             helpO_obj.SetActive(false);
         }
-        else if (help_i == 2)
+        else if (help_i == 3)
         {
             help_i++;
             helpR_obj.SetActive(false);
             helpO_obj.SetActive(true);
+            helpImg_obj.GetComponent<Image>().sprite = spr_help[help_i];
+        }
+        else if (help_i == 2)
+        {
+            help_i++;
+            helpL_obj.SetActive(true);
+            helpR_obj.SetActive(true);
+            helpO_obj.SetActive(false);
             helpImg_obj.GetComponent<Image>().sprite = spr_help[help_i];
         }
         else
@@ -314,17 +322,17 @@ public class MainMenuEvt : MonoBehaviour
         float f =PlayerPrefs.GetFloat("talkspeed", 0.05f);
         if (f == 0.07f)
         {
-            speed_txt.text = "Conversation Speed Normal";
+            speed_txt.text = "Talk Speed Normal";
             PlayerPrefs.SetFloat("talkspeed", 0.05f);
         }
         else if (f == 0.05f)
         {
-            speed_txt.text = "Conversation Speed Fast";
+            speed_txt.text = "Talk Speed Fast";
             PlayerPrefs.SetFloat("talkspeed", 0.03f);
         }
         else if (f == 0.03f)
         {
-            speed_txt.text = "Conversation Speed Slow";
+            speed_txt.text = "Talk Speed Slow";
             PlayerPrefs.SetFloat("talkspeed", 0.07f);
         }
     }
