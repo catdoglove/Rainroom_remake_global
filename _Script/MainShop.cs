@@ -166,7 +166,7 @@ public class MainShop : MonoBehaviour
             //레벨
             txt_wall[0].text = "Lv.MAX";
             //이름
-            txt_wall[1].text = "Cozy wallpaper";
+            txt_wall[1].text = "Stable wallpaper";
             //물
             txt_wall[2].text = "x";
             //마음
@@ -510,12 +510,12 @@ public class MainShop : MonoBehaviour
         cost_wall[2] = 15000;
         cost_wall[3] = 500;
 
-        wall_name[2] = "Cozy wallpaper";
+        wall_name[2] = "Stable wallpaper";
         cost_wall[4] = 0;
         cost_wall[5] = 0;
 
         //물마음-책
-        book_name[0] = "Leaflet";
+        book_name[0] = "Flyer";
         cost_book[0] = 0;
         cost_book[1] = 10;
 
@@ -547,7 +547,7 @@ public class MainShop : MonoBehaviour
         cost_book[14] = 15000;
         cost_book[15] = 200;
 
-        book_name[8] = "A short story book";
+        book_name[8] = "Novel";
         cost_book[16] = 30000;
         cost_book[17] = 450;
 
@@ -974,7 +974,7 @@ public class MainShop : MonoBehaviour
             shopBtn_obj[5].GetComponent<Button>().interactable = false;
             txt_wall[0].text = "Lv.MAX";
             //이름
-            txt_wall[1].text = "Cozy wallpaper";
+            txt_wall[1].text = "Stable wallpaper";
             //물
             txt_wall[2].text = "x";
             //마음
