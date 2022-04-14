@@ -1299,7 +1299,7 @@ public class MainShop : MonoBehaviour
     public void showPictureAllTxt()
     {
         memoImg.SetActive(true);
-        txt_memoName[0].text = "About the paint";
+        txt_memoName[0].text = "About the pictute";
         memoFalse();
         txt_memoName[1].text = str_memo[6];
     }

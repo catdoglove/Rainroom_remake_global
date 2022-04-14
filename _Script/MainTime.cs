@@ -513,7 +513,7 @@ public class MainTime : MonoBehaviour
     {
         int k = 0;
         k = PlayerPrefs.GetInt("water", 0) * 5;
-        txt_glassShow.text = "Collected " + k + "water.";
+        txt_glassShow.text = "Collected " + k + " water.";
         k = PlayerPrefs.GetInt(str + "r", 0) + k;
         PlayerPrefs.SetInt(str + "r", k);
         PlayerPrefs.SetInt("water", 0);
