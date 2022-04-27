@@ -6359,11 +6359,11 @@ MonoBehaviour:
     : It''s newspapers from a few months ago. I read it so many times that I memorized
     it.
 
-    Torn magazine : I went to a secondhand bookstore and bought a torn
-    magazine. There''s a trend from a year ago.
+    Torn magazine : I went to a secondhand bookstore and bought a torn magazine.
+    There''s a trend from a year ago.
 
-    Biography : I''ve seen a biography.
-    Can I be such a great person?
+    Biography : I''ve seen a biography. Can
+    I be such a great person?
 
     Cookbook : Looking at the cookbook, I thought
     there are various foods in the world. I want to try it.
@@ -6378,8 +6378,8 @@ MonoBehaviour:
     Comic book : I decided to buy all the comic
     book series. I want it to be serialized again.
 
-    Novel : The scene where
-    the main character meets his parents again in the novel was really touching.
+    Novel : The scene where the
+    main character meets his parents again in the novel was really touching.
 
     Bookshelf
     : I''m glad I don''t have to put books on the floor anymore because I have a
@@ -6387,21 +6387,21 @@ MonoBehaviour:
   - 'Cracked window : The rain''s coming into the room because of the broken window.
     So it''s cold.
 
-    Repaired window : Newspapers attached to the window are
-    gone when it blows.
+    Repaired window : Newspapers attached to the window are gone
+    when it blows.
 
-    Repaired window+ : I fixed it with tape, but it rattles
-    whenever a car passes by in front of my home.
+    Repaired window+ : I fixed it with tape, but it rattles whenever
+    a car passes by in front of my home.
 
-    Window : I changed it to
-    the steady window, so I can relax now.
+    Window : I changed it to the steady
+    window, so I can relax now.
 
-    Sticker attach : I went to the stationery
-    store and bought stickers for a change. I attached it to the window and I think
-    it''s good.
+    Sticker attach : I went to the stationery store
+    and bought stickers for a change. I attached it to the window and I think it''s
+    good.
 
-    Sticker attach+ : I attached more stickers. I think it''s cool.
-    How is it?
+    Sticker attach+ : I attached more stickers. I think it''s cool. How
+    is it?
 
     Curtained window : I hung curtains on a window because I didn''t
     know when the sunlight would come in. It''s good to see when it''s blown by the
@@ -6415,8 +6415,8 @@ MonoBehaviour:
     the color.'
   - 'Seed : I bought the seed but I don''t know how to do it..
 
-    Styrofoam :
-    I picked up the styrofoam outside. So I put in soil and gave it some water.
+    Styrofoam : I
+    picked up the styrofoam outside. So I put in soil and gave it some water.
 
     Wooden
     box : I picked up the wooden box in the river. It''s a little damp but it will
@@ -6441,9 +6441,9 @@ MonoBehaviour:
     day. And it''ll bloom soon. I hope that the clouds in my mind will clear and
     flowers will bloom in my mind.
 
-    Vase3 : I have a steady interest in it.
-    I never thought of flowers blooming in this weather. But I watered it day by
-    day and it grew little by little. Thanks to you, I could see beautiful flowers.'
+    Vase3 : I have a steady interest in it. I
+    never thought of flowers blooming in this weather. But I watered it day by day
+    and it grew little by little. Thanks to you, I could see beautiful flowers.'
   - 'A broken bulb : The light bulb is broken and is blinking so my eyes hurt. I''m
     worried about it.
 
@@ -6456,11 +6456,11 @@ MonoBehaviour:
     A white bulb
     : I bought a new one in the city.
 
-    A black bulb : I changed it in black
-    color. I think it''s cool.
+    A black bulb : I changed it in black color.
+    I think it''s cool.
 
-    A white bulb : It''s much cleaner than before.
-    I like it.'
+    A white bulb : It''s much cleaner than before. I like
+    it.'
   - 'Leaky wallpaper : I think the water leaking in the ceiling.
 
     Repaired wallpaper
@@ -6494,8 +6494,8 @@ MonoBehaviour:
 
     Waiting : They are waiting for something slowly.
 
-    In bloom
-    : The flower is blooming. I think they''re surprised.
+    In bloom :
+    The flower is blooming. I think they''re surprised.
 
     Hello : Do they greet
     each other? They reach out their hand.
@@ -9203,7 +9203,7 @@ RectTransform:
   m_GameObject: {fileID: 439931068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7499998, y: 0.7499998, z: 1}
+  m_LocalScale: {x: 0.7499997, y: 0.7499997, z: 1}
   m_Children: []
   m_Father: {fileID: 695030165}
   m_RootOrder: 0
@@ -9211,7 +9211,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 2, y: 0}
-  m_SizeDelta: {x: 461.91052, y: 83.170456}
+  m_SizeDelta: {x: 568.90063, y: 83.170456}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &439931070
 MonoBehaviour:
@@ -16472,7 +16472,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 378.30228, y: 93.69392}
+  m_SizeDelta: {x: 423.2692, y: 119.30962}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &695030166
 MonoBehaviour:
@@ -16742,7 +16742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 23.22, y: 25.7}
+  m_AnchoredPosition: {x: 29, y: 25.7}
   m_SizeDelta: {x: 80, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &722027273
@@ -19460,7 +19460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: 0}
+  m_AnchoredPosition: {x: 0.00000047684, y: 0}
   m_SizeDelta: {x: 421.08215, y: 83.170456}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &817726927
@@ -22310,7 +22310,7 @@ MonoBehaviour:
   m_Text: '[Conditions for next Level]
 
     Keep talking and Window, Book Lv.2 or
-    more'
+    more.'
 --- !u!222 &961575055
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33146,10 +33146,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
-  m_Text: 'It''s the same as     .
-
-    You need these when you buy things off of
-    the shop.'
+  m_Text: "It's the same as     \nYou need these when you buy things off of the shop."
 --- !u!222 &1496108793
 CanvasRenderer:
   m_ObjectHideFlags: 0

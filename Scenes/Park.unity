@@ -951,7 +951,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 14.1, y: 8}
-  m_SizeDelta: {x: 306.23132, y: 212.78894}
+  m_SizeDelta: {x: 334.3009, y: 212.78894}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &236617718
 MonoBehaviour:
@@ -2184,7 +2184,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -5.399999, y: -10.2}
-  m_SizeDelta: {x: 296.06873, y: 77.77283}
+  m_SizeDelta: {x: 360.64783, y: 94.736786}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &512006620
 MonoBehaviour:
@@ -4730,8 +4730,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60.1, y: -95}
-  m_SizeDelta: {x: 300.01303, y: 103.39662}
+  m_AnchoredPosition: {x: 60.1, y: -97.5}
+  m_SizeDelta: {x: 300.01303, y: 98.30589}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &929883674
 MonoBehaviour:
@@ -7411,7 +7411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.6000009, y: -10.200001}
+  m_AnchoredPosition: {x: -5.4, y: -10.2}
   m_SizeDelta: {x: 421.08215, y: 83.170456}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1411855429
@@ -10233,7 +10233,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "Watch short video\nReturn number of talk \nback to 5"
+  m_Text: "Watch short video\nReturn number of talk \nback to 5."
 --- !u!222 &1996429220
 CanvasRenderer:
   m_ObjectHideFlags: 0

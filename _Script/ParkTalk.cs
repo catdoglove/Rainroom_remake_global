@@ -222,8 +222,8 @@ public class ParkTalk : MonoBehaviour
 
             testText_cut = text_str.Split('/'); //끊기
             cleantalk();
-
-            if (testText_cut[0] == "q")
+            HeartPlus();
+            if (testText_cut[0] == "9")
             { //질문이 있는경우
                 StartCoroutine("questionTalkRun");
             }
@@ -378,12 +378,12 @@ public class ParkTalk : MonoBehaviour
         {
             text_str = text_str.Insert(text_str.Length, testText_cut[i]);
 
-            if (text_str.Contains("y"))
+            if (text_str.Contains("8"))
             {
                 string str, str2;
-                str = quesStr.Substring(quesStr.IndexOf("y") + 1, 4);
+                str = quesStr.Substring(quesStr.IndexOf("8") + 1, 12);
                 btnTxt1.text = str;
-                str2 = quesStr.Substring(quesStr.IndexOf("n") + 1, 4);
+                str2 = quesStr.Substring(quesStr.IndexOf("7") + 1, 12);
                 btnTxt2.text = str2;
             }
             else

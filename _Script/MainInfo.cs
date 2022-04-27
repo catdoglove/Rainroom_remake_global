@@ -68,19 +68,19 @@ public class MainInfo : MonoBehaviour
         {
             sld_like.maxValue = 112;
             face.GetComponent<Image>().sprite = spr_face[1];
-            txt_likeLv.text = "[Conditions for next Level]" + "\n"+ "Keep talking and Window, Book Lv.4 or more";
+            txt_likeLv.text = "[Conditions for next Level]" + "\n"+ "Keep talking and Window, Book Lv.4 or more.";
         }
         if (PlayerPrefs.GetInt("likelv", 0) == 2)
         {
             sld_like.maxValue = 224;
             face.GetComponent<Image>().sprite = spr_face[2];
-            txt_likeLv.text = "[Conditions for next Level]" + "\n" + "Keep talking and Window, Book Lv.6 or more";
+            txt_likeLv.text = "[Conditions for next Level]" + "\n" + "Keep talking and Window, Book Lv.6 or more.";
         }
         if (PlayerPrefs.GetInt("likelv", 0) == 3)
         {
             sld_like.maxValue = 316;
             face.GetComponent<Image>().sprite = spr_face[3];
-            txt_likeLv.text = "[Conditions for next Level]" + "\n" + "Keep talking and Window, Book Lv.8 or more";
+            txt_likeLv.text = "[Conditions for next Level]" + "\n" + "Keep talking and Window, Book Lv.8 or more.";
         }
         if (PlayerPrefs.GetInt("likelv", 0) == 4)
         {
