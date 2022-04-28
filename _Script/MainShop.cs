@@ -53,7 +53,7 @@ public class MainShop : MonoBehaviour
     void Start()
     {
         str_Code = PlayerPrefs.GetString("code", "");
-        
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
         if (PlayerPrefs.GetInt("lightlv", 0) >= 2)
         {

@@ -5218,8 +5218,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\uCD94\uC6B4 \uACA8\uC6B8\uC5D0 \uAC00\uC7A5 \uB9CE\uC774 \uCC3E\uB294
-    \uB048\uC740? "
+  m_Text: What can one catch that is not thrown?
 --- !u!222 &272709364
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17635,7 +17634,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.13619995, y: 1.57}
+  m_AnchoredPosition: {x: 0.12, y: 1.51}
   m_SizeDelta: {x: 189.86862, y: 221.5134}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &749876033
@@ -33559,7 +33558,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\uBD88\uC5B4\uB098\uB294 \uAC15\uBB3C.. \uC800\uC218\uC9C0 \uB118\uCCD0"
+  m_Text: "Reservoir flooding: rising river levels\r"
 --- !u!222 &1541967937
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -35039,10 +35038,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\uC624\uB298 \uC0C8\uBCBD 2\uC2DC\uC5D0 \uAC11\uC790\uAE30 \uBD88\uC5B4\uB09C
-    \uAC15\uBB3C\uC5D0 \uC800\uC218\uC9C0\uAC00 \uB118\uCCE4\uC2B5\uB2C8\uB2E4. \uACB0\uAD6D
-    \uAC00\uCD95\uB4E4\uC774 \uB5A0\uB0B4\uB824\uAC00 \uBC15\uC528 \uB18D\uAC00\uC5D0
-    \uB9C9\uB300\uD55C \uD53C\uD574\uB97C \uC785\uC5C8\uC2B5\uB2C8\uB2E4.\r"
+  m_Text: The river suddenly blew up at 3 am today and the reservoir flooded. Eventually,
+    the livestock drifted away causing enormous damage to Mr.Kim's farmhouse.
 --- !u!222 &1611442234
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37837,7 +37834,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.56376, y: -53.8}
+  m_AnchoredPosition: {x: -0.52836, y: -54.96}
   m_SizeDelta: {x: 1.0567193, y: 0.47645462}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1765316439
@@ -37924,7 +37921,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ea2952db7667314429ab0ca7b4b2365f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b6322e55e26d0594d87bd61209554923, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -41529,7 +41526,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d8fec7f3beaac524a9f12a701e3c0dc6, type: 3}
+    m_Font: {fileID: 12800000, guid: 7ac3691fcb3297b4597ba72a09183efa, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -41800,8 +41797,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 300375168}
-        m_MethodName: showNews
+      - m_Target: {fileID: 788415839}
+        m_MethodName: showNews2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -42708,7 +42705,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: " \uB530\uB048\uB530\uB048\r"
+  m_Text: A cold
 --- !u!222 &2081487393
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -43329,7 +43326,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\uBC15\uC528\uB124 \uB3FC\uC9C0\uAC00 \uB5A0\uB0B4\uB824\uAC00\n"
+  m_Text: Mr.Kim's cow was floated away
 --- !u!222 &2126359817
 CanvasRenderer:
   m_ObjectHideFlags: 0

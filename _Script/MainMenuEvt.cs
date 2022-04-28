@@ -343,7 +343,7 @@ public class MainMenuEvt : MonoBehaviour
 
     void MemoryDestroy()
     {
-        if (GM == null)
+        if (GM_city == null)
         {
             GM_city = GameObject.FindGameObjectWithTag("도시GM");
         }        
@@ -352,4 +352,13 @@ public class MainMenuEvt : MonoBehaviour
         helpCity_obj.GetComponent<Image>().sprite = null;        
     }
 
+
+    public void showNews2()
+    {
+        if (GM == null)
+        {
+            GM = GameObject.FindGameObjectWithTag("GameObject");
+        }
+        GM.GetComponent<RoomText>().showNews();
+    }
 }
