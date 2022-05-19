@@ -36,13 +36,13 @@ public class MainMenuEvt : MonoBehaviour
         switch (PlayerPrefs.GetFloat("talkspeed", 0.05f))
         {
             case 0.05f:
-                speed_txt.text = "Talk Speed Normal";
+                speed_txt.text = "Talk Speed" + "\n" + "Normal";
                 break;
             case 0.03f:
-                speed_txt.text = "Talk Speed Fast";
+                speed_txt.text = "Talk Speed" + "\n" + "Fast";
                 break;
             case 0.07f:
-                speed_txt.text = "Talk Speed Slow";
+                speed_txt.text = "Talk Speed" + "\n" + "Slow";
                 break;
         }
 
@@ -322,17 +322,17 @@ public class MainMenuEvt : MonoBehaviour
         float f =PlayerPrefs.GetFloat("talkspeed", 0.05f);
         if (f == 0.07f)
         {
-            speed_txt.text = "Talk Speed Normal";
+            speed_txt.text = "Talk Speed" + "\n" + "Normal";
             PlayerPrefs.SetFloat("talkspeed", 0.05f);
         }
         else if (f == 0.05f)
         {
-            speed_txt.text = "Talk Speed Fast";
-            PlayerPrefs.SetFloat("talkspeed", 0.03f);
+            speed_txt.text = "Talk Speed" + "\n" + "Fast";
+            PlayerPrefs.SetFloat("talkspeed", 0.02f);
         }
         else if (f == 0.03f)
         {
-            speed_txt.text = "Talk Speed Slow";
+            speed_txt.text = "Talk Speed" + "\n" + "Slow";
             PlayerPrefs.SetFloat("talkspeed", 0.07f);
         }
     }

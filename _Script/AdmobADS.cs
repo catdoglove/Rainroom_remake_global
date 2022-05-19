@@ -130,7 +130,7 @@ public class AdmobADS : MonoBehaviour {
         if (PlayerPrefs.GetInt("talk", 5) >= 5)
         {
             Toast_obj.SetActive(true);
-            adPop_txt.text = "Number of Talk's already the max," + "\n" + "so you can't";
+            adPop_txt.text = "Number of Talk's already the max," + "\n" + "so you can't.";
         }
         else
         {
