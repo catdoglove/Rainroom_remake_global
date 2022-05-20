@@ -38,7 +38,7 @@ public class MainMenuEvt : MonoBehaviour
             case 0.05f:
                 speed_txt.text = "Talk Speed" + "\n" + "Normal";
                 break;
-            case 0.03f:
+            case 0.02f:
                 speed_txt.text = "Talk Speed" + "\n" + "Fast";
                 break;
             case 0.07f:
@@ -330,7 +330,7 @@ public class MainMenuEvt : MonoBehaviour
             speed_txt.text = "Talk Speed" + "\n" + "Fast";
             PlayerPrefs.SetFloat("talkspeed", 0.02f);
         }
-        else if (f == 0.03f)
+        else if (f == 0.02f)
         {
             speed_txt.text = "Talk Speed" + "\n" + "Slow";
             PlayerPrefs.SetFloat("talkspeed", 0.07f);
