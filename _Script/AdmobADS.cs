@@ -35,7 +35,7 @@ public class AdmobADS : MonoBehaviour {
 
         MobileAds.Initialize(initStatus => { });
 #if UNITY_ANDROID
-        string appId = "ca-app-pub-9179569099191885~6058797220"; //테스트용ca-app-pub-3940256099942544~3347511713
+        string appId = "ca-app-pub-9179569099191885~6058797220"; 
 #elif UNITY_IPHONE
             string appId = "ca-app-pub-3940256099942544~1458002511";
 #else
@@ -52,7 +52,7 @@ public class AdmobADS : MonoBehaviour {
 
         //보상형광고
 #if UNITY_ANDROID
-        adUnitIdvideo = "ca-app-pub-9179569099191885/9339319267"; // 테스트 ca-app-pub-3940256099942544/5224354917
+        adUnitIdvideo = "ca-app-pub-9179569099191885/9339319267"; 
 #elif UNITY_IPHONE
             adUnitIdvideo = "ca-app-pub-3940256099942544/1712485313";
 #else
