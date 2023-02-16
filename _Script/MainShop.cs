@@ -983,6 +983,24 @@ public class MainShop : MonoBehaviour
     }
     void BookRe()
     {
+        level = PlayerPrefs.GetInt("booklv", 0);
+        level--;
+        sum = level * 2;
+        cost_r = cost_book[sum];
+        cost_h = cost_book[sum + 1];
+        calc();
+        level++;
+        sum = level * 2;
+        cost_r = cost_book[sum];
+        cost_h = cost_book[sum + 1];
+        //레벨
+        txt_book[0].text = "Lv." + level;
+        //이름
+        txt_book[1].text = book_name[level];
+        //물
+        txt_book[2].text = "" + cost_r;
+        //마음
+        txt_book[3].text = "" + cost_h;
         if (level >= 9)
         {
             shopBtn_obj[4].GetComponent<Button>().interactable = false;
@@ -992,27 +1010,6 @@ public class MainShop : MonoBehaviour
             txt_book[3].text = "x";
             //btn_memoBook.SetActive(true);
             //btn_colorBook.SetActive(true);
-        }
-        else
-        {
-            level = PlayerPrefs.GetInt("booklv", 0);
-            level--;
-            sum = level * 2;
-            cost_r = cost_book[sum];
-            cost_h = cost_book[sum + 1];
-            calc();
-            level++;
-            sum = level * 2;
-            cost_r = cost_book[sum];
-            cost_h = cost_book[sum + 1];
-            //레벨
-            txt_book[0].text = "Lv." + level;
-            //이름
-            txt_book[1].text = book_name[level];
-            //물
-            txt_book[2].text = "" + cost_r;
-            //마음
-            txt_book[3].text = "" + cost_h;
         }
     }
 
