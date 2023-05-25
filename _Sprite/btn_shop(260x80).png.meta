@@ -48,7 +48,7 @@ TextureImporter:
       213: 1817009707133847697
     second: btn_shop(260x80)_7
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -68,6 +68,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -76,9 +78,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -99,10 +101,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -140,6 +146,18 @@ TextureImporter:
     overridden: 1
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -159,7 +177,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 81d99b54209a8a9b0800000000000000
-      internalID: -5068615553380672232
+      internalID: -449009830217189855
       vertices: []
       indices: 
       edges: []
@@ -180,7 +198,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d55a4125f56bd6430800000000000000
-      internalID: 3777876182948947293
+      internalID: -5849946338323808703
       vertices: []
       indices: 
       edges: []
@@ -201,7 +219,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2fd40795587efe1b0800000000000000
-      internalID: -5625022849645261326
+      internalID: 5802293008692816832
       vertices: []
       indices: 
       edges: []
@@ -222,7 +240,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4d6ba15daf3334d30800000000000000
-      internalID: 4414429212163356372
+      internalID: 5683110474444103629
       vertices: []
       indices: 
       edges: []
@@ -243,7 +261,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 974849bdfe2d0b010800000000000000
-      internalID: 1202693028130882681
+      internalID: -6915721306887365042
       vertices: []
       indices: 
       edges: []
@@ -264,7 +282,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 163e622b5fce938e0800000000000000
-      internalID: -1713077643237727391
+      internalID: -6057780809607686779
       vertices: []
       indices: 
       edges: []
@@ -285,7 +303,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: abc03ff8997c6a3f0800000000000000
-      internalID: -889804414000100166
+      internalID: -4710622023527907221
       vertices: []
       indices: 
       edges: []
@@ -321,6 +339,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      btn_shop(260x80)_0: -449009830217189855
+      btn_shop(260x80)_1: -5849946338323808703
+      btn_shop(260x80)_2: 5802293008692816832
+      btn_shop(260x80)_3: 5683110474444103629
+      btn_shop(260x80)_4: -6915721306887365042
+      btn_shop(260x80)_5: -6057780809607686779
+      btn_shop(260x80)_6: -4710622023527907221
+      btn_shop(260x80)_7: 1817009707133847697
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
