@@ -92,6 +92,44 @@ public class MainTime : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.GetInt("emergencyCODE", 0) == 0)
+        {
+            System.DateTime turnBackTime = System.DateTime.Now.AddHours(-12);
+            PlayerPrefs.SetString("saveGudoc", turnBackTime.ToString());
+
+            turnBackTime = System.DateTime.Now.AddHours(-1);
+            PlayerPrefs.SetString("savePaper", turnBackTime.ToString());
+
+            turnBackTime = System.DateTime.Now.AddHours(-10);
+            PlayerPrefs.SetString("seedLastTime", turnBackTime.ToString());
+
+            turnBackTime = System.DateTime.Now.AddHours(-1);
+            PlayerPrefs.SetString("outtime", turnBackTime.ToString());
+
+            turnBackTime = System.DateTime.Now.AddHours(-10);
+            PlayerPrefs.SetString("lastTime", turnBackTime.ToString());
+
+            turnBackTime = System.DateTime.Now.AddHours(-1);
+            PlayerPrefs.SetString("TalkLastTime", turnBackTime.ToString());
+
+            turnBackTime = System.DateTime.Now.AddHours(-6);
+            PlayerPrefs.SetString("sleepLastTime", turnBackTime.ToString());
+
+            turnBackTime = System.DateTime.Now.AddHours(-1);
+            PlayerPrefs.SetString("adtimes", turnBackTime.ToString());
+
+            turnBackTime = System.DateTime.Now.AddHours(-1);
+            PlayerPrefs.SetString("adtimescity", turnBackTime.ToString());
+
+            turnBackTime = System.DateTime.Now.AddHours(-1);
+            PlayerPrefs.SetString("adtimespark", turnBackTime.ToString());
+
+            PlayerPrefs.SetInt("emergencyCODE", 99);
+        }
+
+
+
+
         //구독확인
         PlayerPrefs.SetInt("gudocgetonce", 1);
         if (PlayerPrefs.GetInt("titlecheck", 0) == 1)
