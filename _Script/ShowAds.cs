@@ -43,8 +43,16 @@ public class ShowAds : MonoBehaviour
     void Adtime()
     {
         
-        now = new System.DateTime(1980, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
+        now = System.DateTime.Now.AddHours(-1);
         lastTimem = PlayerPrefs.GetString("adtimes", now.ToString());
+        try
+        {
+            System.DateTime lastDateTimem2 = System.DateTime.Parse(lastTimem);
+        }
+        catch (System.Exception)
+        {
+            lastTimem = System.DateTime.Now.AddHours(-1).ToString();
+        }
         Timechecker();
         System.DateTime lastDateTimem = System.DateTime.Parse(lastTimem);
         System.TimeSpan compareTimem = System.DateTime.Now - lastDateTimem;
