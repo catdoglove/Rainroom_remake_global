@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import <IronSource/IronSource.h>
+#import <UnityAds/UnityAds.h>
 
-void GADUMIronSourceSetConsent(BOOL consent) { [LevelPlay setConsent:consent]; }
-
-void GADUMIronSourceSetMetaData(const char *_Nonnull key, const char *_Nonnull metaDataValue) {
-  [LevelPlay setMetaDataWithKey:@(key) value:@(metaDataValue)];
+void GADUMSetConsentMetaData(const char* key, BOOL consent) {
+  UADSMetaData* unityAdsMetaData = [[UADSMetaData alloc] init];
+  [unityAdsMetaData set:@(key) value:@(consent)];
+  [unityAdsMetaData commit];
 }

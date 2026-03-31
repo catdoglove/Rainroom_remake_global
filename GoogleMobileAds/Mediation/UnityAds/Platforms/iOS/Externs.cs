@@ -12,10 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import <IronSource/IronSource.h>
+#if UNITY_IOS
 
-void GADUMIronSourceSetConsent(BOOL consent) { [LevelPlay setConsent:consent]; }
+using System.Runtime.InteropServices;
 
-void GADUMIronSourceSetMetaData(const char *_Nonnull key, const char *_Nonnull metaDataValue) {
-  [LevelPlay setMetaDataWithKey:@(key) value:@(metaDataValue)];
+namespace GoogleMobileAds.Mediation.UnityAds.iOS
+{
+    // Externs used by the iOS component
+    internal class Externs
+    {
+        [DllImport("__Internal")]
+        internal static extern void GADUMSetConsentMetaData(string key, bool metaDataValue);
+    }
 }
+
+#endif

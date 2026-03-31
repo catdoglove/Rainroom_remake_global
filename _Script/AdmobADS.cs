@@ -5,6 +5,7 @@ using GoogleMobileAds.Api;
 using UnityEngine.UI;
 using System;
 using GoogleMobileAds.Api.Mediation.IronSource;
+using GoogleMobileAds.Api.Mediation.UnityAds;
 
 public class AdmobADS : MonoBehaviour {
     
@@ -31,7 +32,10 @@ public class AdmobADS : MonoBehaviour {
 
     private void Awake()
     {
+
         GoogleMobileAds.Mediation.IronSource.Api.IronSource.SetMetaData("do_not_sell", "true");
+        GoogleMobileAds.Mediation.UnityAds.Api.UnityAds.SetConsentMetaData("gdpr.consent", true);
+        GoogleMobileAds.Mediation.UnityAds.Api.UnityAds.SetConsentMetaData("privacy.consent", true);
     }
 
 
@@ -52,6 +56,17 @@ public class AdmobADS : MonoBehaviour {
                 LoadRewardedAd();
                 LoadRewardedInterstitialAd();
                 // This callback is called once the MobileAds SDK is initialized.
+
+                /*
+                // initStatus 안에 어댑터 목록이 있어야 함
+                Dictionary<string, AdapterStatus> map = initStatus.getAdapterStatusMap();
+                foreach (var keyValuePair in map)
+                {
+                    string className = keyValuePair.Key;
+                    AdapterStatus status = keyValuePair.Value;
+                    Debug.Log($"어댑터: {className}, 상태: {status.InitializationState}");
+                }
+                */
             });
 
         }
@@ -65,10 +80,19 @@ public class AdmobADS : MonoBehaviour {
             cutTime_btn.interactable = false;
         }
 
-
     }
 
 
+
+    public void OnButtonClick()
+    {
+        MobileAds.OpenAdInspector((AdInspectorError error) =>
+        {
+            if (error != null)
+                Debug.Log($"Ad Inspector 오류: {error.GetMessage()}");
+            // Error will be set if there was an issue and the inspector was not displayed.
+        });
+    }
 
     public void LoadRewardedAd()
     {

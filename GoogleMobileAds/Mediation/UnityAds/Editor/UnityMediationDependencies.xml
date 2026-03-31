@@ -1,5 +1,5 @@
 <!--
-    Copyright 2018 Google LLC
+    Copyright 2017 Google LLC
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -16,15 +16,25 @@
 
 <dependencies>
   <androidPackages>
-    <androidPackage spec="com.google.ads.mediation:ironsource:9.3.0.1">
+
+    <androidPackage spec="com.google.ads.mediation:unity:4.17.0.0">
       <repositories>
-        <repository>https://android-sdk.is.com/</repository>
+        <repository>https://repo.maven.apache.org/maven2/</repository>
         <repository>https://dl.google.com/dl/android/maven2/</repository>
       </repositories>
     </androidPackage>
+
+    <!-- If using the Unity Ads Service from Unity3D, comment out this dependency to avoid
+    including the Unity Android SDK twice. -->
+    <androidPackage spec="com.unity3d.ads:unity-ads:4.17.0">
+      <repositories>
+        <repository>https://repo.maven.apache.org/maven2/</repository>
+      </repositories>
+    </androidPackage>
+
   </androidPackages>
 
   <iosPods>
-    <iosPod name="GoogleMobileAdsMediationIronSource" version="9.3.0.0.1"/>
+    <iosPod name="GoogleMobileAdsMediationUnity" version="4.17.0.0"/>
   </iosPods>
 </dependencies>

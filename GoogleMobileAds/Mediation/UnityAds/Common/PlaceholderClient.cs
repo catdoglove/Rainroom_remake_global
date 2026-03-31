@@ -12,10 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import <IronSource/IronSource.h>
+using System.Reflection;
 
-void GADUMIronSourceSetConsent(BOOL consent) { [LevelPlay setConsent:consent]; }
+using UnityEngine;
 
-void GADUMIronSourceSetMetaData(const char *_Nonnull key, const char *_Nonnull metaDataValue) {
-  [LevelPlay setMetaDataWithKey:@(key) value:@(metaDataValue)];
+namespace GoogleMobileAds.Mediation.UnityAds.Common
+{
+    public class PlaceholderClient : IUnityAdsClient
+    {
+        public PlaceholderClient ()
+        {
+            Debug.Log ("Placeholder " + MethodBase.GetCurrentMethod ().Name);
+        }
+
+        public void SetConsentMetaData(string key, bool metaDataValue)
+        {
+            Debug.Log ("Placeholder " + MethodBase.GetCurrentMethod ().Name);
+        }
+    }
 }

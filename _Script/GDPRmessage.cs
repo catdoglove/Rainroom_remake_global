@@ -54,12 +54,6 @@ public class GDPRmessage : MonoBehaviour
                 UnityEngine.Debug.LogError(consentError);
                 return;
             }
-            // Initialize the Google Mobile Ads SDK.
-            MobileAds.Initialize((InitializationStatus initStatus) =>
-            {
-                // This callback is called once the MobileAds SDK is initialized.
-            });
-
         });
     }
     public void ShowPrivacyOptionsForm()
