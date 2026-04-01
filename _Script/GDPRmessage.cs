@@ -54,6 +54,11 @@ public class GDPRmessage : MonoBehaviour
                 UnityEngine.Debug.LogError(consentError);
                 return;
             }
+
+            if (ConsentInformation.CanRequestAds())
+            {
+                FindObjectOfType<AdmobADS>().InitializeAds();
+            }
         });
     }
     public void ShowPrivacyOptionsForm()
