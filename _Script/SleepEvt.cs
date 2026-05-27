@@ -16,7 +16,7 @@ public class SleepEvt : MonoBehaviour
     public GameObject switch_obj;
     public Sprite[] spr_switch;
 
-    public GameObject cha_obj;
+    public GameObject cha_obj, alarm_obj;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +50,10 @@ public class SleepEvt : MonoBehaviour
                 nightStar_obj.SetActive(true);
             }
         }
-
+        if (PlayerPrefs.GetInt("sleeptimeadsreward", 0) == 99)
+        {
+            alarm_obj.SetActive(false);
+        }
     }
 
     void SleepAni()
@@ -113,6 +116,7 @@ public class SleepEvt : MonoBehaviour
         cha_obj.SetActive(true);
         sleepBack_obj.SetActive(false);
         dreamnote_obj.SetActive(true);
+        Invoke("WaitSleep", 1f);
     }
 
 
@@ -137,8 +141,15 @@ public class SleepEvt : MonoBehaviour
         hours = (int)compareTime.TotalHours;
         minute = (int)compareTime.TotalMinutes;
         minute = minute - (minute / 60) * 60;
-        minute = 59 - minute;
-        hours = 5 - hours;
+        minute = 59 - minute; 
+        if (PlayerPrefs.GetInt("sleeptimeadsreward", 0) == 99)
+        {
+            hours = 3 - hours;
+        }
+        else
+        {
+            hours = 5 - hours;
+        }
         if (minute < 0)
         {
         }
@@ -166,6 +177,14 @@ public class SleepEvt : MonoBehaviour
         PlayerPrefs.SetInt("sleeping", 1);
         PlayerPrefs.SetInt("sleepdream", 1);
         sleepMove();
+        if (PlayerPrefs.GetInt("sleeptimeadsreward", 0) == 99)
+        {
+            alarm_obj.SetActive(false);
+        }
+        else
+        {
+            alarm_obj.SetActive(true);
+        }
     }
 
     public void SleepN()
@@ -236,5 +255,9 @@ public class SleepEvt : MonoBehaviour
             PlayerPrefs.SetInt("starlight", 1);
         }
     }
-    
+    public void WaitSleep()
+    {
+
+        PlayerPrefs.SetInt("sleeptimeadsreward", 0);
+    }
 }
