@@ -60,7 +60,7 @@ public class ShowAds : MonoBehaviour
         agb = (int)compareTimem.TotalSeconds;
         agb = agb - (agb / 60) * 60;
         agb = 59 - agb;
-        ag = 4 - ag;
+        ag = 3 - ag;
         if (ag < 0)
         {
             if (PlayerPrefs.GetInt("roomads",0)==0)

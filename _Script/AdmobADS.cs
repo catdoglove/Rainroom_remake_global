@@ -301,6 +301,7 @@ public class AdmobADS : MonoBehaviour {
                 adPop_txt.text = "Time needed to go out" + "\n" + "was reduced.";
             });
         }
+        
         else
         {
             Toast_obj.SetActive(true);

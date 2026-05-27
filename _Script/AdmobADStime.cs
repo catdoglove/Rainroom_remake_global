@@ -23,7 +23,7 @@ public class AdmobADStime : MonoBehaviour
     {
         color = new Color(1f, 1f, 1f);
 
-        _rewardedAdUnitId = "ca-app-pub-9179569099191885/8513428768";
+        _rewardedAdUnitId = "ca-app-pub-9179569099191885/8677080299";
 
         if (Application.internetReachability != NetworkReachability.NotReachable)
         {
@@ -79,7 +79,7 @@ public class AdmobADStime : MonoBehaviour
             {
                 closeTimeADS();
                 Toast_obj.SetActive(true);
-                Toast_txt.text = "잠자는 시간이 2시간 감소되었다.";
+                Toast_txt.text = "Time has been reduced by 2 hours.";
                 StartCoroutine("ToastImgFadeOut");
                 PlayerPrefs.SetInt("sleeptimeadsreward", 99);
                 alarm_obj.SetActive(false);
@@ -114,7 +114,7 @@ public class AdmobADStime : MonoBehaviour
         if (PlayerPrefs.GetInt("wait", 0) == 2)
         {
             Toast_obj.SetActive(true);
-            Toast_txt.text = "아직 볼 수 없다." + "\n" + "나중에 시도해보자.";
+            Toast_txt.text = "Can't see it yet." + "\n" + "Try later.";
             StartCoroutine("ToastImgFadeOut");
         }
     }
