@@ -8,7 +8,7 @@ public class RoomTalk : MonoBehaviour
 {
 
     List<Dictionary<string, object>> data_talk, data_item; //csv파일
-    int etcNum = 0;
+   // int etcNum = 0;
     public Text Text_obj; //선언 및 보여질
     string[] testText_cut; //대사 끊기
     string text_str; //실질적 대사출력
@@ -52,7 +52,9 @@ public class RoomTalk : MonoBehaviour
     public GameObject seedRain_obj, seedTxt_obj,gmS;
 
     string str_Code;
-    
+
+    private string[] lineStr;
+    private int cnt;
 
     private void toastFunction()
     {
@@ -184,12 +186,16 @@ public class RoomTalk : MonoBehaviour
         Application.Quit();
     }
 
+    async void csvvreader()
+    {
+        data_talk = await CSVReader.ReadAsync("Assets/CSV/talk_room.csv"); //대사 불러오기  
+        data_item = await CSVReader.ReadAsync("Assets/CSV/talk_item.csv");
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        data_talk = CSVReader.Read("CSV/talk_room"); //대사 불러오기  
-        data_item = CSVReader.Read("CSV/talk_item");
+        csvvreader();
 
         allArr[0] = 50;
         allArr[1] = 50;
@@ -291,111 +297,106 @@ public class RoomTalk : MonoBehaviour
         }
         else
         {
+            cleantalk();
             TalkSound();
-            int a = PlayerPrefs.GetInt("likepoint",0);
+            int a = PlayerPrefs.GetInt("likepoint", 0);
             a = a + 1;
             PlayerPrefs.SetInt("likepoint", a);
             lovetalk();
-            testText_cut = text_str.Split('/'); //끊기
-            cleantalk();
 
-            if (testText_cut[0] == "9")
+            if (text_str.Contains("^"))
             { //질문이 있는경우
+                lineStr = text_str.ToString().Split('|'); // 0:질문 1:대답버튼 2:1번의 대답 3:대답버튼 4:3번의 대답   
                 StartCoroutine("questionTalkRun");
             }
             else
             {
-                StartCoroutine("talkRun");
+                StartCoroutine(talkRun(speedF));
             }
             UpLike();
-
             HeartPlus();
         }
     }
 
 
-
     //대사 출력
-    IEnumerator talkRun()
+    IEnumerator talkRun(float f)
     {
-        talkballoon.SetActive(true);
         falseObject();
-        for (int i = 0; i < testText_cut.Length; i++)
+        cnt = 0;
+        while (cnt != text_str.Length)
         {
-            text_str = text_str.Insert(text_str.Length, testText_cut[i]);
-            Text_obj.text = text_str;
+            if (cnt < text_str.Length)
+            {
+                Text_obj.text += text_str[cnt].ToString();
+                cnt++;
+            }
             yield return new WaitForSeconds(speedF);
         }
-       trueObject();
+        trueObject();
     }
 
     //질문 출력
     IEnumerator questionTalkRun()
     {
-        talkballoon.SetActive(true);
         falseObject();
         closeTB.SetActive(false);
         quesBack.SetActive(true);
-        quesStr = " ";
-        for (int i = 0; i < testText_cut.Length; i++)
+        //  quesStr = " ";
+        btnTxt1.text = " ";
+        btnTxt2.text = " ";
+        cnt = 1;
+        while (cnt != lineStr[0].Length)
         {
-            quesStr = quesStr.Insert(quesStr.Length, testText_cut[i]);
+            if (cnt < lineStr[0].Length)
+            {
+                Text_obj.text += lineStr[0][cnt].ToString();
+                cnt++;
+            }
+            yield return new WaitForSeconds(speedF);
         }
 
-        for (int i = 1; i < testText_cut.Length; i++)
-        {
-            text_str = text_str.Insert(text_str.Length, testText_cut[i]);
+        btnTxt1.text += lineStr[1].ToString();
+        btnTxt2.text += lineStr[3].ToString();
 
-            if (text_str.Contains("8"))
-            {
-                string str, str2;
-                str = quesStr.Substring(quesStr.IndexOf("8") + 1, 12);
-                btnTxt1.text = str;
-                str2 = quesStr.Substring(quesStr.IndexOf("7") + 1, 12);
-                btnTxt2.text = str2;
-            }
-            else
-            {
-                Text_obj.text = text_str;
-                yield return new WaitForSeconds(speedF);
-            }
-        }
         quesBtmArea.SetActive(true);
     }
+
 
     //선택한 질문 출력
     IEnumerator choiceTextRun()
     {
-        talkballoon.SetActive(true);
         falseObject();
 
-        quesStr = " ";
-        for (int i = 0; i < testText_cut.Length; i++)
-        {
-            quesStr = quesStr.Insert(quesStr.Length, testText_cut[i]);
-        }
+        //  quesStr = " ";
+        cnt = 0;
 
         if (choiceNum == 1)
         {
-            for (int i = quesStr.IndexOf("+"); i < quesStr.IndexOf("-") - 1; i++)
+            while (cnt != lineStr[2].Length)
             {
-                text_str = text_str.Insert(text_str.Length, testText_cut[i]);
-                Text_obj.text = text_str;
+                if (cnt < lineStr[2].Length)
+                {
+                    Text_obj.text += lineStr[2][cnt].ToString();
+                    cnt++;
+                }
                 yield return new WaitForSeconds(speedF);
             }
         }
         else if (choiceNum == 2)
         {
-            for (int i = quesStr.IndexOf("*"); i < quesStr.IndexOf("=") - 1; i++)
+            while (cnt != lineStr[4].Length)
             {
-                text_str = text_str.Insert(text_str.Length, testText_cut[i]);
-                Text_obj.text = text_str;
+                if (cnt < lineStr[4].Length)
+                {
+                    Text_obj.text += lineStr[4][cnt].ToString();
+                    cnt++;
+                }
                 yield return new WaitForSeconds(speedF);
             }
         }
         trueObject();
     }
-
 
     //질문버튼
     public void choiceBtn1()
@@ -507,7 +508,7 @@ public class RoomTalk : MonoBehaviour
        // itemLv[5] = PlayerPrefs.GetInt("그림", 0);
       //  itemLv[6] = PlayerPrefs.GetInt("시계", 0);
     }
-    
+
     IEnumerator itemTalkRun()
     {
         speedF = PlayerPrefs.GetFloat("talkspeed", 0.05f);
@@ -526,84 +527,68 @@ public class RoomTalk : MonoBehaviour
 
     public void talkBook()
     {
-        text_str = "" + data_item[PlayerPrefs.GetInt("booklv", 0)]["book"];
-        testText_cut = text_str.Split('/');
         cleantalk();
+        text_str = "" + data_item[PlayerPrefs.GetInt("booklv", 0)]["book"];
+        StartCoroutine(talkRun(speedF));
 
-        StopCoroutine("itemTalkRun");
-        StartCoroutine("itemTalkRun");
     }
 
     public void talkWall()
     {
-        text_str = "" + data_item[PlayerPrefs.GetInt("walllv", 0)]["wall"]; 
-        testText_cut = text_str.Split('/');
         cleantalk();
+        text_str = "" + data_item[PlayerPrefs.GetInt("walllv", 0)]["wall"];
+        StartCoroutine(talkRun(speedF));
 
-        StopCoroutine("itemTalkRun");
-        StartCoroutine("itemTalkRun");
     }
 
     public void talkLight()
     {
-        text_str = "" + data_item[PlayerPrefs.GetInt("lightlv", 0)]["light"];
-        testText_cut = text_str.Split('/');
         cleantalk();
+        text_str = "" + data_item[PlayerPrefs.GetInt("lightlv", 0)]["light"];
+        StartCoroutine(talkRun(speedF));
 
-        StopCoroutine("itemTalkRun");
-        StartCoroutine("itemTalkRun");
     }
 
     public void talkWindow()
     {
-        text_str = "" + data_item[PlayerPrefs.GetInt("windowlv", 0)]["window"];
-        testText_cut = text_str.Split('/');
         cleantalk();
+        text_str = "" + data_item[PlayerPrefs.GetInt("windowlv", 0)]["window"];
+        StartCoroutine(talkRun(speedF));
 
-        StopCoroutine("itemTalkRun");
-        StartCoroutine("itemTalkRun");
     }
 
     public void talkSeed()
     {
-        text_str = "" + data_item[PlayerPrefs.GetInt("seedgrow", 1)-1]["seed"];
-        testText_cut = text_str.Split('/');
         cleantalk();
+        text_str = "" + data_item[PlayerPrefs.GetInt("seedgrow", 1) - 1]["seed"];
+        StartCoroutine(talkRun(speedF));
 
-        StopCoroutine("itemTalkRun");
-        StartCoroutine("itemTalkRun");
     }
 
     public void talkPicture()
     {
-        text_str = "" + data_item[PlayerPrefs.GetInt("draw", 0)-1]["picture"];
-        testText_cut = text_str.Split('/');
         cleantalk();
+        text_str = "" + data_item[PlayerPrefs.GetInt("draw", 0) - 1]["picture"];
+        StartCoroutine(talkRun(speedF));
 
-        StopCoroutine("itemTalkRun");
-        StartCoroutine("itemTalkRun");
     }
 
     public void talkClock()
     {
-        text_str = "" + data_item[PlayerPrefs.GetInt("clock", 0)-1]["clock"];
-        testText_cut = text_str.Split('/');
         cleantalk();
+        text_str = "" + data_item[PlayerPrefs.GetInt("clock", 0) - 1]["clock"];
+        StartCoroutine(talkRun(speedF));
 
-        StopCoroutine("itemTalkRun");
-        StartCoroutine("itemTalkRun");
     }
 
 
     public void talkTurtle()
-    {         
+    {
+        cleantalk();
         change_turtle.SetActive(true);
         text_str = "" + data_item[num_turtle]["turtle"];
-        testText_cut = text_str.Split('/');
-        cleantalk();
+        StartCoroutine(talkRun(speedF));
 
-        StopCoroutine("itemTalkRun");
-        StartCoroutine("itemTalkRun");
 
         if (num_turtle < 9)
         {
@@ -617,14 +602,10 @@ public class RoomTalk : MonoBehaviour
     }
 
     public void talkDal()
-    {
-        text_str = "T/h/e/ /d/a/l/g/o/n/a/ /s/e/l/l/e/r/ /g/a/v/e/ /m/e/ /t/h/i/s/./ /O/f/ /c/o/u/r/s/e/ /t/h/i/s/ /i/s/ /n/o/t/ /r/e/a/ll/y/ /f/i/s/h/./";
-        testText_cut = text_str.Split('/');
+    {        
         cleantalk();
-
-        StopCoroutine("itemTalkRun");
-        StartCoroutine("itemTalkRun");
-        //달고나 장수가 줬어. 자주 사 먹은 기념품이야. 물론 진짜 물고기는 아니야
+        text_str = "The dalgona seller gave me this. Of course this is not really fish.";
+        StartCoroutine(talkRun(speedF));
     }
 
 

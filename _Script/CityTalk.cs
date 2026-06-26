@@ -7,7 +7,7 @@ using System.Linq; //랜덤필
 public class CityTalk : MonoBehaviour
 {
     List<Dictionary<string, object>> data_talk, data_eat; //csv파일
-    int etcNum = 0;
+ //  int etcNum = 0;
     public Text Text_obj; //선언 및 보여질
     string[] testText_cut; //대사 끊기
     string text_str; //실질적 대사출력
@@ -38,8 +38,10 @@ public class CityTalk : MonoBehaviour
     public GameObject GM, gmS;
 
     string str_Code;
-    int have_h, cost_h;    
-    
+    int have_h, cost_h;
+    private string[] lineStr;
+    private int cnt;
+
 
     void Update()
     {
@@ -58,15 +60,18 @@ public class CityTalk : MonoBehaviour
             cafe_open_img.GetComponent<Image>().sprite = spr_cafe[0];
             cafe_btn.SetActive(true);
         }
-
-        data_talk = CSVReader.Read("CSV/talk_out");
-        data_eat = CSVReader.Read("CSV/city_eat");
+        csvvreader();
 
         allArr[0] = 100;//대사
         allArr[1] = 10; //음식
 
         str_Code = PlayerPrefs.GetString("code", "");
 
+    }
+    async void csvvreader()
+    {
+        data_talk = await CSVReader.ReadAsync("Assets/CSV/talk_out.csv");
+        data_eat = await CSVReader.ReadAsync("Assets/CSV/city_eat.csv");
     }
 
     void cleantalk() //대화 초기화
@@ -127,7 +132,7 @@ public class CityTalk : MonoBehaviour
                 return randArr;
 
 
-                break;
+              //  break;
 
             case 10://음식
 
@@ -153,7 +158,7 @@ public class CityTalk : MonoBehaviour
                 }
                 return randArr1;
 
-                break;
+             //   break;
         }
 
         return null;
@@ -176,31 +181,32 @@ public class CityTalk : MonoBehaviour
         }
         else
         {
+            cleantalk();
             TalkSound();
             int a = PlayerPrefs.GetInt("likepoint", 0);
             a = a + 1;
             PlayerPrefs.SetInt("likepoint", a);
             lineReload(0);
 
-            text_str = "" + data_talk[randArr[nowArr - 1]]["park"];
-
-            testText_cut = text_str.Split('/'); //끊기
-            cleantalk();
-            HeartPlus();
-            if (testText_cut[0] == "9")
+            text_str = "" + data_talk[randArr[nowArr - 1]]["city"];
+            if (text_str.Contains("^"))
             { //질문이 있는경우
+                lineStr = text_str.ToString().Split('|'); // 0:질문 1:대답버튼 2:1번의 대답 3:대답버튼 4:3번의 대답   
                 StartCoroutine("questionTalkRun");
             }
             else
             {
-                StartCoroutine("talkRun");
+                StartCoroutine(talkRun(speedF));
             }
+
+            HeartPlus();
         }
     }
 
 
     void talkBunsik(string str)
     {
+        cleantalk();
         eatFalseObject();
         if (PlayerPrefs.GetInt("talkcityCK", 0) == 99)
         {
@@ -214,9 +220,7 @@ public class CityTalk : MonoBehaviour
         //Audio_obj.GetComponent<SoundEvt>().talkSound();
         lineReload(1);
         text_str = "" + data_eat[randArr1[nowArr - 1]][str];
-        testText_cut = text_str.Split('/'); //끊기
-        cleantalk();
-        StartCoroutine("talkRun");
+        StartCoroutine(talkRun(speedF));
         StartCoroutine("eatFood");
     }
 
@@ -252,6 +256,7 @@ public class CityTalk : MonoBehaviour
 
     void talkCafe(string str)
     {
+        cleantalk();
         eatFalseObject();
         if (PlayerPrefs.GetInt("talkcityCK", 0) == 99)
         {
@@ -266,9 +271,7 @@ public class CityTalk : MonoBehaviour
 
         lineReload(1);
         text_str = "" + data_eat[randArr1[nowArr - 1]][str];
-        testText_cut = text_str.Split('/'); //끊기
-        cleantalk();
-        StartCoroutine("talkRun");
+        StartCoroutine(talkRun(speedF));
         StartCoroutine("eatFood");
     }
 
@@ -333,13 +336,17 @@ public class CityTalk : MonoBehaviour
     }
 
     //대사 출력
-    IEnumerator talkRun()
+    IEnumerator talkRun(float f)
     {
         falseObject();
-        for (int i = 0; i < testText_cut.Length; i++)
+        cnt = 0;
+        while (cnt != text_str.Length)
         {
-            text_str = text_str.Insert(text_str.Length, testText_cut[i]);
-            Text_obj.text = text_str;
+            if (cnt < text_str.Length)
+            {
+                Text_obj.text += text_str[cnt].ToString();
+                cnt++;
+            }
             yield return new WaitForSeconds(speedF);
         }
         trueObject();
@@ -351,30 +358,23 @@ public class CityTalk : MonoBehaviour
         falseObject();
         closeTB.SetActive(false);
         quesBack.SetActive(true);
-        quesStr = " ";
-        for (int i = 0; i < testText_cut.Length; i++)
+        //    quesStr = " ";
+        btnTxt1.text = "";
+        btnTxt2.text = "";
+        cnt = 1;
+        while (cnt != lineStr[0].Length)
         {
-            quesStr = quesStr.Insert(quesStr.Length, testText_cut[i]);
+            if (cnt < lineStr[0].Length)
+            {
+                Text_obj.text += lineStr[0][cnt].ToString();
+                cnt++;
+            }
+            yield return new WaitForSeconds(speedF);
         }
 
-        for (int i = 1; i < testText_cut.Length; i++)
-        {
-            text_str = text_str.Insert(text_str.Length, testText_cut[i]);
+        btnTxt1.text += lineStr[1].ToString();
+        btnTxt2.text += lineStr[3].ToString();
 
-            if (text_str.Contains("8"))
-            {
-                string str, str2;
-                str = quesStr.Substring(quesStr.IndexOf("8") + 1, 12);
-                btnTxt1.text = str;
-                str2 = quesStr.Substring(quesStr.IndexOf("7") + 1, 12);
-                btnTxt2.text = str2;
-            }
-            else
-            {
-                Text_obj.text = text_str;
-                yield return new WaitForSeconds(speedF);
-            }
-        }
         quesBtmArea.SetActive(true);
     }
 
@@ -383,27 +383,30 @@ public class CityTalk : MonoBehaviour
     {
         falseObject();
 
-        quesStr = " ";
-        for (int i = 0; i < testText_cut.Length; i++)
-        {
-            quesStr = quesStr.Insert(quesStr.Length, testText_cut[i]);
-        }
+        //     quesStr = " ";
+        cnt = 0;
 
         if (choiceNum == 1)
         {
-            for (int i = quesStr.IndexOf("+"); i < quesStr.IndexOf("-") - 1; i++)
+            while (cnt != lineStr[2].Length)
             {
-                text_str = text_str.Insert(text_str.Length, testText_cut[i]);
-                Text_obj.text = text_str;
+                if (cnt < lineStr[2].Length)
+                {
+                    Text_obj.text += lineStr[2][cnt].ToString();
+                    cnt++;
+                }
                 yield return new WaitForSeconds(speedF);
             }
         }
         else if (choiceNum == 2)
         {
-            for (int i = quesStr.IndexOf("*"); i < quesStr.IndexOf("=") - 1; i++)
+            while (cnt != lineStr[4].Length)
             {
-                text_str = text_str.Insert(text_str.Length, testText_cut[i]);
-                Text_obj.text = text_str;
+                if (cnt < lineStr[4].Length)
+                {
+                    Text_obj.text += lineStr[4][cnt].ToString();
+                    cnt++;
+                }
                 yield return new WaitForSeconds(speedF);
             }
         }

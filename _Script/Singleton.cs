@@ -16,7 +16,7 @@ public class Singleton : MonoBehaviour {
         if (len == 2)
         {
             //삭제
-            DestroyImmediate(gameObject);
+            DestroyImmediate(this.gameObject);
         }
         else
         {

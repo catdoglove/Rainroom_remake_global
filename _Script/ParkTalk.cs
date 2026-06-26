@@ -7,7 +7,7 @@ using System.Linq; //랜덤필
 public class ParkTalk : MonoBehaviour
 {
     List<Dictionary<string, object>> data_talk, data_etc; //csv파일
-    int etcNum = 0;
+   // int etcNum = 0;
     public Text Text_obj, dal_Text_obj; //선언 및 보여질
     string[] testText_cut; //대사 끊기
     string text_str; //실질적 대사출력
@@ -42,6 +42,8 @@ public class ParkTalk : MonoBehaviour
     public GameObject catPop_obj;
     public Text txt_pop;
 
+    private string[] lineStr;
+    private int cnt;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -51,13 +53,18 @@ public class ParkTalk : MonoBehaviour
         }
 
     }
-        
+
+    async void csvvreader()
+    {
+        data_talk = await CSVReader.ReadAsync("Assets/CSV/talk_out.csv");
+        data_etc = await CSVReader.ReadAsync("Assets/CSV/etc_park.csv");
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
-        data_talk = CSVReader.Read("CSV/talk_out");
-        data_etc = CSVReader.Read("CSV/etc_park");
+        csvvreader();
 
         allArr[0] = 100;//대사
         allArr[1] = 15; //쓰레기
@@ -125,7 +132,7 @@ public class ParkTalk : MonoBehaviour
                 return randArr;
 
 
-                break;
+               // break;
 
             case 15://쓰레기
                 
@@ -151,7 +158,7 @@ public class ParkTalk : MonoBehaviour
                 }
                 return randArr1;
 
-                break;
+             //   break;
 
             case 20://고양이
 
@@ -178,7 +185,7 @@ public class ParkTalk : MonoBehaviour
                 }
                 return randArr2;
 
-                break;
+            //    break;
         }
 
         return null;
@@ -212,6 +219,7 @@ public class ParkTalk : MonoBehaviour
         }
         else
         {
+            cleantalk();
             TalkSound();
             int a = PlayerPrefs.GetInt("likepoint", 0);
             a = a + 1;
@@ -220,30 +228,32 @@ public class ParkTalk : MonoBehaviour
 
             text_str = "" + data_talk[randArr[nowArr - 1]]["park"];
 
-            testText_cut = text_str.Split('/'); //끊기
-            cleantalk();
-            HeartPlus();
-            if (testText_cut[0] == "9")
+            Text_obj.text = "";
+            if (text_str.Contains("^"))
             { //질문이 있는경우
+                lineStr = text_str.ToString().Split('|'); // 0:질문 1:대답버튼 2:1번의 대답 3:대답버튼 4:3번의 대답   
                 StartCoroutine("questionTalkRun");
             }
             else
             {
-                StartCoroutine("talkRun");
+                StartCoroutine(talkRun(speedF));
             }
+
+            HeartPlus();
         }
     }
 
     public void talkTrash() //쓰레기대사
     {
-        if (PlayerPrefs.GetInt("talkparkCK", 0)== 99 || PlayerPrefs.GetInt("talkparkCK", 0) == 77)
+        cleantalk();
+        if (PlayerPrefs.GetInt("talkparkCK", 0) == 99 || PlayerPrefs.GetInt("talkparkCK", 0) == 77)
         {
             nowArr = 0;
         }
         PlayerPrefs.SetInt("talkparkCK", 88);
         //대화속도
         speedF = PlayerPrefs.GetFloat("talkspeed", 0.05f);
-        
+
         //소리
         //Audio_obj.GetComponent<SoundEvt>().talkSound();
 
@@ -251,14 +261,13 @@ public class ParkTalk : MonoBehaviour
 
         text_str = "" + data_etc[randArr1[nowArr - 1]]["trash"];
 
-        testText_cut = text_str.Split('/'); //끊기
-        cleantalk();
-        StartCoroutine("talkRun");
+        StartCoroutine(talkRun(speedF));
 
     }
 
     public void talkCat() //고양이대사
     {
+        cleantalk();
         if (PlayerPrefs.GetInt("talkparkCK", 0) == 99 || PlayerPrefs.GetInt("talkparkCK", 0) == 88)
         {
             nowArr = 0;
@@ -273,10 +282,7 @@ public class ParkTalk : MonoBehaviour
 
         text_str = "" + data_etc[randArr2[nowArr - 1]]["cat"];
 
-        testText_cut = text_str.Split('/'); //끊기
-        cleantalk();
-        StartCoroutine("talkRun");
-        
+        StartCoroutine(talkRun(speedF));
     }
 
     //고양이 먹이줌
@@ -345,17 +351,18 @@ public class ParkTalk : MonoBehaviour
         talkbtn.SetActive(true);
     }
 
-
-
     //대사 출력
-    IEnumerator talkRun()
+    IEnumerator talkRun(float f)
     {
-        talkballoon.SetActive(true);
         falseObject();
-        for (int i = 0; i < testText_cut.Length; i++)
+        cnt = 0;
+        while (cnt != text_str.Length)
         {
-            text_str = text_str.Insert(text_str.Length, testText_cut[i]);
-            Text_obj.text = text_str;
+            if (cnt < text_str.Length)
+            {
+                Text_obj.text += text_str[cnt].ToString();
+                cnt++;
+            }
             yield return new WaitForSeconds(speedF);
         }
         trueObject();
@@ -364,64 +371,58 @@ public class ParkTalk : MonoBehaviour
     //질문 출력
     IEnumerator questionTalkRun()
     {
-        talkballoon.SetActive(true);
         falseObject();
         closeTB.SetActive(false);
         quesBack.SetActive(true);
-        quesStr = " ";
-        for (int i = 0; i < testText_cut.Length; i++)
+        //   quesStr = " ";
+        btnTxt1.text = "";
+        btnTxt2.text = "";
+        cnt = 1;
+        while (cnt != lineStr[0].Length)
         {
-            quesStr = quesStr.Insert(quesStr.Length, testText_cut[i]);
+            if (cnt < lineStr[0].Length)
+            {
+                Text_obj.text += lineStr[0][cnt].ToString();
+                cnt++;
+            }
+            yield return new WaitForSeconds(speedF);
         }
 
-        for (int i = 1; i < testText_cut.Length; i++)
-        {
-            text_str = text_str.Insert(text_str.Length, testText_cut[i]);
+        btnTxt1.text += lineStr[1].ToString();
+        btnTxt2.text += lineStr[3].ToString();
 
-            if (text_str.Contains("8"))
-            {
-                string str, str2;
-                str = quesStr.Substring(quesStr.IndexOf("8") + 1, 12);
-                btnTxt1.text = str;
-                str2 = quesStr.Substring(quesStr.IndexOf("7") + 1, 12);
-                btnTxt2.text = str2;
-            }
-            else
-            {
-                Text_obj.text = text_str;
-                yield return new WaitForSeconds(speedF);
-            }
-        }
         quesBtmArea.SetActive(true);
     }
 
     //선택한 질문 출력
     IEnumerator choiceTextRun()
     {
-        talkballoon.SetActive(true);
         falseObject();
 
-        quesStr = " ";
-        for (int i = 0; i < testText_cut.Length; i++)
-        {
-            quesStr = quesStr.Insert(quesStr.Length, testText_cut[i]);
-        }
+        //  quesStr = " ";
+        cnt = 0;
 
         if (choiceNum == 1)
         {
-            for (int i = quesStr.IndexOf("+"); i < quesStr.IndexOf("-") - 1; i++)
+            while (cnt != lineStr[2].Length)
             {
-                text_str = text_str.Insert(text_str.Length, testText_cut[i]);
-                Text_obj.text = text_str;
+                if (cnt < lineStr[2].Length)
+                {
+                    Text_obj.text += lineStr[2][cnt].ToString();
+                    cnt++;
+                }
                 yield return new WaitForSeconds(speedF);
             }
         }
         else if (choiceNum == 2)
         {
-            for (int i = quesStr.IndexOf("*"); i < quesStr.IndexOf("=") - 1; i++)
+            while (cnt != lineStr[4].Length)
             {
-                text_str = text_str.Insert(text_str.Length, testText_cut[i]);
-                Text_obj.text = text_str;
+                if (cnt < lineStr[4].Length)
+                {
+                    Text_obj.text += lineStr[4][cnt].ToString();
+                    cnt++;
+                }
                 yield return new WaitForSeconds(speedF);
             }
         }

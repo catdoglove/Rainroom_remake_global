@@ -22,17 +22,17 @@ namespace GoogleMobileAds.Mediation.IronSource.Common
     {
         public PlaceholderClient ()
         {
-            Debug.Log ("Placeholder " + MethodBase.GetCurrentMethod ().Name);
+           // Debug.Log ("Placeholder " + MethodBase.GetCurrentMethod ().Name);
         }
 
         public void SetConsent(bool consent)
         {
-            Debug.Log ("Placeholder " + MethodBase.GetCurrentMethod ().Name);
+            //Debug.Log ("Placeholder " + MethodBase.GetCurrentMethod ().Name);
         }
 
         public void SetMetaData(string key, string metaDataValue)
         {
-            Debug.Log ("Placeholder " + MethodBase.GetCurrentMethod ().Name);
+         //   Debug.Log ("Placeholder " + MethodBase.GetCurrentMethod ().Name);
         }
     }
 }
