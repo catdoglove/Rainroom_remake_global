@@ -6,14 +6,16 @@ using UnityEngine.UI;
 using System;
 using GoogleMobileAds.Api.Mediation.UnityAds;
 
-public class AdmobADS : MonoBehaviour {
-    
+
+public class AdmobADS : MonoBehaviour
+{
+
     //영상
     private RewardedAd rewardedAd, rewardedAdout;
     private string _rewardedAdUnitId;
 
 
-    //보상형 전면 광고
+    //외출 광고
     private string _GoOutADSid;
 
     int rewardCoin;
@@ -33,13 +35,13 @@ public class AdmobADS : MonoBehaviour {
 
     private void Awake()
     {
+        //UnityAds.SetConsentMetaData("gdpr.consent", true);
         GoogleMobileAds.Mediation.UnityAds.Api.UnityAds.SetConsentMetaData("gdpr.consent", true);
         GoogleMobileAds.Mediation.UnityAds.Api.UnityAds.SetConsentMetaData("privacy.consent", true);
     }
 
-
     // Use this for initialization 앱 ID
-    void Start ()
+    void Start()
     {
         color = new Color(1f, 1f, 1f);
 
@@ -48,13 +50,19 @@ public class AdmobADS : MonoBehaviour {
 
         InitializeAds();
 
+
         if (PlayerPrefs.GetInt("outtimecut", 0) == 4 && PlayerPrefs.GetInt("scene", 0) == 0)
         {
             cutTime_btn.interactable = false;
         }
-
     }
-
+    public void OnButtonClick()
+    {
+        MobileAds.OpenAdInspector((AdInspectorError error) =>
+        {
+            // Error will be set if there was an issue and the inspector was not displayed.
+        });
+    }
     private void Update()
     {
         if (isFirstAdRewardPending)
@@ -70,16 +78,18 @@ public class AdmobADS : MonoBehaviour {
         }
     }
 
+
     public void InitializeAds()
     {
-
         if (Application.internetReachability != NetworkReachability.NotReachable) //인터넷연결된경우?
         {
             // Initialize the Google Mobile Ads SDK.
             MobileAds.Initialize((InitializationStatus initStatus) =>
             {
+                Debug.Log("Admob Init Complete");
                 LoadRewardedAd();
                 LoadRewardedAd2();
+                //LoadRewardedInterstitialAd();
                 // This callback is called once the MobileAds SDK is initialized.
 
                 /*
@@ -94,23 +104,12 @@ public class AdmobADS : MonoBehaviour {
                 */
             });
 
+
         }
         else
         {
-            //Debug.Log("No Internet, skip init for now. 인터넷 연결 불가능");
+            // Debug.Log("No Internet, skip init for now. 인터넷 연결 불가능");
         }
-    }
-
-
-
-    public void OnButtonClick()
-    {
-        MobileAds.OpenAdInspector((AdInspectorError error) =>
-        {
-            if (error != null)
-                Debug.Log($"Ad Inspector 오류: {error.GetMessage()}");
-            // Error will be set if there was an issue and the inspector was not displayed.
-        });
     }
 
     public void LoadRewardedAd()
@@ -147,6 +146,7 @@ public class AdmobADS : MonoBehaviour {
     }
 
 
+
     private void RegisterEventHandlers(RewardedAd ad)
     {
         // Raised when the ad is estimated to have earned money.
@@ -156,8 +156,14 @@ public class AdmobADS : MonoBehaviour {
         };
 
         ad.OnAdFullScreenContentClosed += () =>
-        {
-
+        {/*
+            if (rewardEarned)
+            {
+              //  Debug.Log("광고닫기");
+                giveMeReward();
+                rewardEarned = false;
+            }
+            */
             if (rewardedAd != null)
             {
                 rewardedAd.Destroy();
@@ -165,7 +171,6 @@ public class AdmobADS : MonoBehaviour {
             }
             LoadRewardedAd();
             Debug.Log("광고 종료");
-
         };
         ad.OnAdFullScreenContentFailed += (AdError error) =>
         {
@@ -178,7 +183,7 @@ public class AdmobADS : MonoBehaviour {
         };
     }
 
-    /*
+
     void giveMeReward()
     {
         GM.GetComponent<ShowAds>().AdReward();
@@ -186,7 +191,7 @@ public class AdmobADS : MonoBehaviour {
         PlayerPrefs.SetInt("blad", 1);
         LoadRewardedAd();
     }
-    */
+
 
 
 
@@ -208,6 +213,7 @@ public class AdmobADS : MonoBehaviour {
                 {
                     isFirstAdRewardPending = true; // Update()로 신호만 보냄
                 });
+
             }
             else
             {
@@ -269,10 +275,6 @@ public class AdmobADS : MonoBehaviour {
 
 
 
-
-
-
-
     /*
     public void LoadRewardedInterstitialAd()
     {
@@ -292,7 +294,6 @@ public class AdmobADS : MonoBehaviour {
         RewardedInterstitialAd.Load(_GoOutADSid, adRequest,
             (RewardedInterstitialAd ad, LoadAdError error) =>
             {
-                // if error is not null, the load request failed.
                 if (error != null || ad == null)
                 {
                     //Debug.LogError("rewarded interstitial ad failed to load an ad " + "with error : " + error);
@@ -306,23 +307,25 @@ public class AdmobADS : MonoBehaviour {
     }
     */
 
+
     //보상형 전면 광고 보여주기
     public void ShowRewardedInterstitialAd()
     {
         //Debug.Log("상태보기 : " + rewardedInterstitialAd);
+
         if (rewardedAdout != null && rewardedAdout.CanShowAd())
         {
+            //blackimg.SetActive(true);
             rewardedAdout.Show((Reward reward) =>
             {
                 isSecondAdRewardPending = true; // Update()로 신호만 보냄
             });
         }
-        
         else
         {
             Toast_obj.SetActive(true);
             adPop_txt.text = "Can't see it yet." + "\n" + "Try later.";
-           // LoadRewardedAd2();
+            //LoadRewardedAd2();
         }
 
     }
@@ -342,11 +345,18 @@ public class AdmobADS : MonoBehaviour {
         // Raised when the ad is estimated to have earned money.
         ad.OnAdPaid += (AdValue adValue) =>
         {
-            //Debug.Log("광고");
         };
 
         ad.OnAdFullScreenContentClosed += () =>
-        {
+        {/*
+            if (rewardEarned)
+            {
+                PlayerPrefs.SetInt("outtimecut", 4);
+                LoadRewardedAd2();
+                rewardEarned = false;
+            }
+            */
+
             if (rewardedAdout != null)
             {
                 rewardedAdout.Destroy();
@@ -367,3 +377,6 @@ public class AdmobADS : MonoBehaviour {
     }
 
 }
+
+
+
