@@ -18,7 +18,7 @@ public class ParkTalk : MonoBehaviour
     public GameObject catheart, cat_eat_txt, cat_enough_txt, cat_already_txt, dal_eat_txt, dal_enough_txt, dal_already_txt;
 
     int[] allArr = new int[3]; 
-    int loveLv = 0; //호감도 단계라고 생각하면 됨
+   // int loveLv = 0; //호감도 단계라고 생각하면 됨
     int countTalkNum;//대화횟수
 
     float speedF = 0.05f;

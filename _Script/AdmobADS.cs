@@ -4,7 +4,6 @@ using UnityEngine;
 using GoogleMobileAds.Api;
 using UnityEngine.UI;
 using System;
-using GoogleMobileAds.Api.Mediation.IronSource;
 using GoogleMobileAds.Api.Mediation.UnityAds;
 
 public class AdmobADS : MonoBehaviour {
@@ -27,12 +26,13 @@ public class AdmobADS : MonoBehaviour {
     System.DateTime lastDateTimenow;
 
     public GameObject GM;
-    bool rewardEarned = false;
+
+    //  중요: 두 광고의 보상 획득 여부를 메인 스레드로 전달하기 위한 플래그 분리
+    private bool isFirstAdRewardPending = false;
+    private bool isSecondAdRewardPending = false;
 
     private void Awake()
     {
-
-        GoogleMobileAds.Mediation.IronSource.Api.IronSource.SetMetaData("do_not_sell", "true");
         GoogleMobileAds.Mediation.UnityAds.Api.UnityAds.SetConsentMetaData("gdpr.consent", true);
         GoogleMobileAds.Mediation.UnityAds.Api.UnityAds.SetConsentMetaData("privacy.consent", true);
     }
@@ -54,6 +54,22 @@ public class AdmobADS : MonoBehaviour {
         }
 
     }
+
+    private void Update()
+    {
+        if (isFirstAdRewardPending)
+        {
+            isFirstAdRewardPending = false;
+            ExecuteFirstAdReward(); // 메인 스레드에서 안전하게 실행!
+        }
+
+        if (isSecondAdRewardPending)
+        {
+            isSecondAdRewardPending = false;
+            ExecuteSecondAdReward(); // 메인 스레드에서 안전하게 실행!
+        }
+    }
+
     public void InitializeAds()
     {
 
@@ -141,18 +157,28 @@ public class AdmobADS : MonoBehaviour {
 
         ad.OnAdFullScreenContentClosed += () =>
         {
-            if (rewardEarned)
+
+            if (rewardedAd != null)
             {
-               // Debug.Log("광고닫기");
-                giveMeReward();
-                rewardEarned = false;
+                rewardedAd.Destroy();
+                rewardedAd = null;
             }
+            LoadRewardedAd();
+            Debug.Log("광고 종료");
 
+        };
+        ad.OnAdFullScreenContentFailed += (AdError error) =>
+        {
+            Debug.LogError(error);
 
+            rewardedAd?.Destroy();
+            rewardedAd = null;
+
+            LoadRewardedAd();
         };
     }
 
-
+    /*
     void giveMeReward()
     {
         GM.GetComponent<ShowAds>().AdReward();
@@ -160,7 +186,7 @@ public class AdmobADS : MonoBehaviour {
         PlayerPrefs.SetInt("blad", 1);
         LoadRewardedAd();
     }
-
+    */
 
 
 
@@ -180,37 +206,33 @@ public class AdmobADS : MonoBehaviour {
                 //blackimg.SetActive(true);
                 rewardedAd.Show((Reward reward) =>
                 {
-                    rewardEarned = true;
-                    lastDateTimenow = System.DateTime.Now;
-                    if (PlayerPrefs.GetInt("scene", 0) == 2)
-                    {
-                        PlayerPrefs.SetString("adtimespark", lastDateTimenow.ToString());
-                    }
-                    else if (PlayerPrefs.GetInt("scene", 0) == 3)
-                    {
-                        PlayerPrefs.SetString("adtimescity", lastDateTimenow.ToString());
-                    }
-                    else if (PlayerPrefs.GetInt("scene", 0) == 0)
-                    {
-                        PlayerPrefs.SetString("adtimes", lastDateTimenow.ToString());
-                    }
-                    else
-                    {
-                        PlayerPrefs.SetString("adtimes", lastDateTimenow.ToString());
-                    }
+                    isFirstAdRewardPending = true; // Update()로 신호만 보냄
                 });
-                PlayerPrefs.Save();
             }
             else
             {
                 Toast_obj.SetActive(true);
                 adPop_txt.text = "Can't see it yet." + "\n" + "Try later.";
-                LoadRewardedAd();
+                //LoadRewardedAd();
             }
         }
     }
 
+    // 메인 스레드에서 안전하게 실행될 첫 번째 보상 로직
+    private void ExecuteFirstAdReward()
+    {
+        lastDateTimenow = System.DateTime.Now;
+        int sceneIndex = PlayerPrefs.GetInt("scene", 0);
 
+        if (sceneIndex == 2) PlayerPrefs.SetString("adtimespark", lastDateTimenow.ToString());
+        else if (sceneIndex == 3) PlayerPrefs.SetString("adtimescity", lastDateTimenow.ToString());
+        else PlayerPrefs.SetString("adtimes", lastDateTimenow.ToString());
+
+        GM.GetComponent<ShowAds>().AdReward();
+        PlayerPrefs.SetInt("talk", 5);
+        PlayerPrefs.SetInt("blad", 1);
+        PlayerPrefs.Save();
+    }
 
     public void LoadRewardedAd2()
     {
@@ -292,13 +314,7 @@ public class AdmobADS : MonoBehaviour {
         {
             rewardedAdout.Show((Reward reward) =>
             {
-                rewardEarned = true;
-                //blackimg.SetActive(true);
-                // TODO: Reward the user.
-                cutTime_btn.interactable = false;
-
-                Toast_obj.SetActive(true);
-                adPop_txt.text = "Time needed to go out" + "\n" + "was reduced.";
+                isSecondAdRewardPending = true; // Update()로 신호만 보냄
             });
         }
         
@@ -306,11 +322,20 @@ public class AdmobADS : MonoBehaviour {
         {
             Toast_obj.SetActive(true);
             adPop_txt.text = "Can't see it yet." + "\n" + "Try later.";
-            LoadRewardedAd2();
+           // LoadRewardedAd2();
         }
 
     }
+    // 메인 스레드에서 안전하게 실행될 두 번째 보상 로직 (UI 조작 포함)
+    private void ExecuteSecondAdReward()
+    {
+        PlayerPrefs.SetInt("outtimecut", 4);
+        PlayerPrefs.Save();
 
+        cutTime_btn.interactable = false;
+        Toast_obj.SetActive(true);
+        adPop_txt.text = "Time needed to go out" + "\n" + "was reduced.";
+    }
 
     private void RegisterEventHandlers2(RewardedAd ad)
     {
@@ -322,12 +347,22 @@ public class AdmobADS : MonoBehaviour {
 
         ad.OnAdFullScreenContentClosed += () =>
         {
-            if (rewardEarned)
+            if (rewardedAdout != null)
             {
-                PlayerPrefs.SetInt("outtimecut", 4);
-                LoadRewardedAd2();
-                rewardEarned = false;
+                rewardedAdout.Destroy();
+                rewardedAdout = null;
             }
+            LoadRewardedAd2();
+            Debug.Log("광고 종료");
+        };
+        ad.OnAdFullScreenContentFailed += (AdError error) =>
+        {
+            Debug.LogError(error);
+
+            rewardedAdout?.Destroy();
+            rewardedAdout = null;
+
+            LoadRewardedAd2();
         };
     }
 

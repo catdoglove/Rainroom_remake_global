@@ -1,4 +1,4 @@
-using GoogleMobileAds.Api;
+ï»¿using GoogleMobileAds.Api;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class AdmobADStime : MonoBehaviour
 {
 
-    //¿µ»ó
+    //ì˜ìƒ
     private RewardedAd rewardedAd;
     private string _rewardedAdUnitId;
 
@@ -18,6 +18,9 @@ public class AdmobADStime : MonoBehaviour
     public Text Toast_txt;
 
     public GameObject GM, timeWnd_obj, alarm_obj;
+
+
+    private bool isRewardPending = false;
 
     void Start()
     {
@@ -31,10 +34,17 @@ public class AdmobADStime : MonoBehaviour
         }
         else
         {
-            //Debug.Log("No Internet, skip init for now ÀÎÅÍ³Ý ¿¬°á X");
+            //Debug.Log("No Internet, skip init for now ì¸í„°ë„· ì—°ê²° X");
         }
     }
-
+    private void Update()
+    {
+        if (isRewardPending)
+        {
+            isRewardPending = false;
+            ExecuteReward();
+        }
+    }
     public void LoadRewardedAd()
     {
         // Clean up the old ad before loading a new one.
@@ -63,39 +73,55 @@ public class AdmobADStime : MonoBehaviour
                 //Debug.Log("Rewarded ad loaded with response : " + ad.GetResponseInfo());
 
                 rewardedAd = ad;
+                RegisterEventHandlers(ad);
             });
 
     }
+    private void RegisterEventHandlers(RewardedAd ad)
+    {
+        ad.OnAdFullScreenContentClosed += () =>
+        {
+            LoadRewardedAd();
+        };
 
+        ad.OnAdFullScreenContentFailed += (AdError error) =>
+        {
+            LoadRewardedAd();
+        };
+    }
 
     public void showAdmobVideo()
     {
-        //Debug.Log("»óÅÂº¸±â : " + rewardedAd);
+        //Debug.Log("ìƒíƒœë³´ê¸° : " + rewardedAd);
 
         PlayerPrefs.SetInt("wait", 1);
         if (rewardedAd != null && rewardedAd.CanShowAd())
         {
             rewardedAd.Show((Reward reward) =>
             {
-                closeTimeADS();
-                Toast_obj.SetActive(true);
-                Toast_txt.text = "Time has been reduced by 2 hours.";
-                StartCoroutine("ToastImgFadeOut");
-                PlayerPrefs.SetInt("sleeptimeadsreward", 99);
-                alarm_obj.SetActive(false);
-
-                PlayerPrefs.SetInt("blad", 1);
-                PlayerPrefs.SetInt("adrunout", 0);
+                isRewardPending = true;
             });
         }
         else
         {
-            //GM.GetComponent<UnityADSMilk>().adYes();
             PlayerPrefs.SetInt("wait", 2);
             MilkToast();
-            LoadRewardedAd();
+           // LoadRewardedAd();
         }
 
+    }
+    private void ExecuteReward()
+    {
+        closeTimeADS();
+        Toast_obj.SetActive(true);
+        Toast_txt.text = "Time has been reduced by 2 hours.";
+        StartCoroutine("ToastImgFadeOut");
+        PlayerPrefs.SetInt("sleeptimeadsreward", 99);
+        alarm_obj.SetActive(false);
+
+        PlayerPrefs.SetInt("blad", 1);
+        PlayerPrefs.SetInt("adrunout", 0);
+        PlayerPrefs.Save(); // Save() ì¶”ê°€ ê¶Œìž¥
     }
 
 
@@ -142,11 +168,17 @@ public class AdmobADStime : MonoBehaviour
 
     }
 
-
-
     public void touchToastEvt()
     {
         Toast_obj.SetActive(false);
+    }
+    private void OnDestroy()
+    {
+        if (rewardedAd != null)
+        {
+            rewardedAd.Destroy();
+            rewardedAd = null;
+        }
     }
 
 }
