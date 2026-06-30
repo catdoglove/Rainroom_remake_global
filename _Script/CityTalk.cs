@@ -55,6 +55,9 @@ public class CityTalk : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //대화속도
+        speedF = PlayerPrefs.GetFloat("talkspeed", 0.05f);
+
         if (PlayerPrefs.GetInt("likelv", 0) >= 8) //호감도이상일경우
         {
             cafe_open_img.GetComponent<Image>().sprite = spr_cafe[0];
@@ -172,8 +175,6 @@ public class CityTalk : MonoBehaviour
             nowArr = 0;
         }
         PlayerPrefs.SetInt("talkcityCK", 99);
-        //대화속도
-        speedF = PlayerPrefs.GetFloat("talkspeed", 0.05f);
 
         if (PlayerPrefs.GetInt("talk", 5) <= 0)
         {
@@ -196,7 +197,7 @@ public class CityTalk : MonoBehaviour
             }
             else
             {
-                StartCoroutine(talkRun(speedF));
+                StartCoroutine(talkRun());
             }
 
             HeartPlus();
@@ -213,14 +214,12 @@ public class CityTalk : MonoBehaviour
             nowArr = 0;
         }
         PlayerPrefs.SetInt("talkcityCK", 88);
-        //대화속도
-        speedF = PlayerPrefs.GetFloat("talkspeed", 0.05f);
 
         //소리
         //Audio_obj.GetComponent<SoundEvt>().talkSound();
         lineReload(1);
         text_str = "" + data_eat[randArr1[nowArr - 1]][str];
-        StartCoroutine(talkRun(speedF));
+        StartCoroutine(talkRun());
         StartCoroutine("eatFood");
     }
 
@@ -263,15 +262,13 @@ public class CityTalk : MonoBehaviour
             nowArr = 0;
         }
         PlayerPrefs.SetInt("talkcityCK", 88);
-        //대화속도
-        speedF = PlayerPrefs.GetFloat("talkspeed", 0.05f);
 
         //소리
         //Audio_obj.GetComponent<SoundEvt>().talkSound();
 
         lineReload(1);
         text_str = "" + data_eat[randArr1[nowArr - 1]][str];
-        StartCoroutine(talkRun(speedF));
+        StartCoroutine(talkRun());
         StartCoroutine("eatFood");
     }
 
@@ -336,18 +333,29 @@ public class CityTalk : MonoBehaviour
     }
 
     //대사 출력
-    IEnumerator talkRun(float f)
+    IEnumerator talkRun()
     {
+        //대화속도
+        speedF = PlayerPrefs.GetFloat("talkspeed", 0.05f);
         falseObject();
         cnt = 0;
         while (cnt != text_str.Length)
         {
-            if (cnt < text_str.Length)
+            // 1. 현재 출력할 문자 확인
+            char currentChar = text_str[cnt];
+            Text_obj.text += currentChar.ToString();
+            cnt++;
+
+            // 2. 문자에 따라 대기 시간 다르게 설정
+            if (currentChar == '.' || currentChar == ',' || currentChar == '!' || currentChar == '?')
             {
-                Text_obj.text += text_str[cnt].ToString();
-                cnt++;
+                yield return new WaitForSeconds(speedF * 9f);
             }
-            yield return new WaitForSeconds(speedF);
+            else
+            {
+                // 일반 글자일 때는 원래 속도대로 출력
+                yield return new WaitForSeconds(speedF);
+            }
         }
         trueObject();
     }
@@ -355,6 +363,8 @@ public class CityTalk : MonoBehaviour
     //질문 출력
     IEnumerator questionTalkRun()
     {
+        //대화속도
+        speedF = PlayerPrefs.GetFloat("talkspeed", 0.05f);
         falseObject();
         closeTB.SetActive(false);
         quesBack.SetActive(true);
@@ -364,12 +374,22 @@ public class CityTalk : MonoBehaviour
         cnt = 1;
         while (cnt != lineStr[0].Length)
         {
-            if (cnt < lineStr[0].Length)
+            // 1. 현재 출력할 문자 확인
+            char currentChar = lineStr[0][cnt];
+            Text_obj.text += currentChar.ToString();
+            cnt++;
+
+            // 2. 문자에 따라 대기 시간 다르게 설정
+            if (currentChar == '.' || currentChar == ',' || currentChar == '!' || currentChar == '?')
             {
-                Text_obj.text += lineStr[0][cnt].ToString();
-                cnt++;
+                // 쉼표나 마침표, 느낌표 등에서는 한 템포 더 길게 쉼 (예: 기본 속도의 3배)
+                yield return new WaitForSeconds(speedF * 9f);
             }
-            yield return new WaitForSeconds(speedF);
+            else
+            {
+                // 일반 글자일 때는 원래 속도대로 출력
+                yield return new WaitForSeconds(speedF);
+            }
         }
 
         btnTxt1.text += lineStr[1].ToString();
@@ -381,6 +401,8 @@ public class CityTalk : MonoBehaviour
     //선택한 질문 출력
     IEnumerator choiceTextRun()
     {
+        //대화속도
+        speedF = PlayerPrefs.GetFloat("talkspeed", 0.05f);
         falseObject();
 
         //     quesStr = " ";
@@ -390,24 +412,42 @@ public class CityTalk : MonoBehaviour
         {
             while (cnt != lineStr[2].Length)
             {
-                if (cnt < lineStr[2].Length)
+                // 1. 현재 출력할 문자 확인
+                char currentChar = lineStr[2][cnt];
+                Text_obj.text += currentChar.ToString();
+                cnt++;
+
+                // 2. 문자에 따라 대기 시간 다르게 설정
+                if (currentChar == '.' || currentChar == ',' || currentChar == '!' || currentChar == '?')
                 {
-                    Text_obj.text += lineStr[2][cnt].ToString();
-                    cnt++;
+                    yield return new WaitForSeconds(speedF * 9f);
                 }
-                yield return new WaitForSeconds(speedF);
+                else
+                {
+                    // 일반 글자일 때는 원래 속도대로 대기
+                    yield return new WaitForSeconds(speedF);
+                }
             }
         }
         else if (choiceNum == 2)
         {
             while (cnt != lineStr[4].Length)
             {
-                if (cnt < lineStr[4].Length)
+                // 1. 현재 출력할 문자 확인
+                char currentChar = lineStr[4][cnt];
+                Text_obj.text += currentChar.ToString();
+                cnt++;
+
+                // 2. 문자에 따라 대기 시간 다르게 설정
+                if (currentChar == '.' || currentChar == ',' || currentChar == '!' || currentChar == '?')
                 {
-                    Text_obj.text += lineStr[4][cnt].ToString();
-                    cnt++;
+                    yield return new WaitForSeconds(speedF * 9f);
                 }
-                yield return new WaitForSeconds(speedF);
+                else
+                {
+                    // 일반 글자일 때는 원래 속도대로 대기
+                    yield return new WaitForSeconds(speedF);
+                }
             }
         }
         trueObject();
