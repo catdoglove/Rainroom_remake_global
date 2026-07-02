@@ -42863,7 +42863,7 @@ MonoBehaviour:
     m_LineSpacing: 0.8
   m_Text: 'Watching short videos
 
-    returns the number of talk-backs to 5.'
+    resets the number of talk to 5.'
 --- !u!222 &1996429220
 CanvasRenderer:
   m_ObjectHideFlags: 0

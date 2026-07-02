@@ -56,6 +56,8 @@ public class RoomTalk : MonoBehaviour
     private string[] lineStr;
     private int cnt;
 
+    private bool isQuitting = false; // 추가
+
     private void toastFunction()
     {
         if (PlayerPrefs.GetInt("sleeping", 0) == 1) //잘때 멘트
@@ -91,35 +93,37 @@ public class RoomTalk : MonoBehaviour
                     break;
             }
         }
-        
 
-            AndroidJavaClass toastClass =
-                    new AndroidJavaClass("android.widget.Toast");
+        AndroidJavaObject currentActivity;
+        using (AndroidJavaClass unityActivity = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+        {
+            currentActivity = unityActivity.GetStatic<AndroidJavaObject>("currentActivity");
+        }
 
-        object[] toastParams = new object[3];
-        AndroidJavaClass unityActivity =
-          new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-        toastParams[0] =
-                     unityActivity.GetStatic<AndroidJavaObject>
-                               ("currentActivity");
-        toastParams[1] = toastTxt;
-        toastParams[2] = toastClass.GetStatic<int>
-                               ("LENGTH_LONG");
-        
-        AndroidJavaObject toastObject =
-                        toastClass.CallStatic<AndroidJavaObject>
-                                      ("makeText", toastParams);
-        
-        toastObject.Call("show");
+        currentActivity.Call("runOnUiThread", new AndroidJavaRunnable(() =>
+        {
+            using (currentActivity) // 람다 실행이 끝나면 여기서 자동 Dispose
+            using (AndroidJavaClass toastClass = new AndroidJavaClass("android.widget.Toast"))
+            {
+                object[] toastParams = new object[3];
+                toastParams[0] = currentActivity;
+                toastParams[1] = toastTxt;
+                toastParams[2] = toastClass.GetStatic<int>("LENGTH_LONG");
+
+                using (AndroidJavaObject toastObject = toastClass.CallStatic<AndroidJavaObject>("makeText", toastParams))
+                {
+                    toastObject.Call("show");
+                }
+            }
+        }));
 
     }
-
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-        { 
-           // closeTalkBoon();
+        {
+            if (isQuitting) return; // 이미 종료 진행 중이면 완전히 무시'
             if (exit_int == 0)
             {
                 exit_int = 1;
@@ -138,11 +142,17 @@ public class RoomTalk : MonoBehaviour
             }
             else
             {
+                isQuitting = true; // 재진입 차단
                 toastFunction();
-                StartCoroutine("applicationQuit");
+                StartCoroutine(applicationQuit());
             }
         }
 
+        IEnumerator applicationQuit()
+        {
+            yield return new WaitForSeconds(0.1f);
+            Application.Quit();
+        }
 
 
         if (exit_int == 1)
@@ -178,12 +188,6 @@ public class RoomTalk : MonoBehaviour
         }
 
 
-    }
-
-    IEnumerator applicationQuit()
-    {
-        yield return new WaitForSeconds(1f);
-        Application.Quit();
     }
 
     async void csvvreader()

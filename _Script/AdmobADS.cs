@@ -33,6 +33,12 @@ public class AdmobADS : MonoBehaviour
     private bool isFirstAdRewardPending = false;
     private bool isSecondAdRewardPending = false;
 
+    private bool isReloadPending = false;
+    private bool isReloadInterstitialPending = false;
+
+    private int loadFailCount = 0;
+    private int loadFailCountInterstitial = 0;
+
     private void Awake()
     {
         //UnityAds.SetConsentMetaData("gdpr.consent", true);
@@ -75,6 +81,22 @@ public class AdmobADS : MonoBehaviour
         {
             isSecondAdRewardPending = false;
             ExecuteSecondAdReward(); // 메인 스레드에서 안전하게 실행!
+        }
+
+        if (isReloadPending)
+        {
+            isReloadPending = false;
+            float delay = Mathf.Min(1f * Mathf.Pow(2, loadFailCount), 30f); // 최대 30초
+            loadFailCount++;
+            Invoke("LoadRewardedAd", delay);
+        }
+
+        if (isReloadInterstitialPending)
+        {
+            isReloadInterstitialPending = false;
+            float delay = Mathf.Min(1f * Mathf.Pow(2, loadFailCountInterstitial), 30f); // 최대 30초
+            loadFailCountInterstitial++;
+            Invoke("LoadRewardedAd2", delay);
         }
     }
 
@@ -133,12 +155,12 @@ public class AdmobADS : MonoBehaviour
                 // if error is not null, the load request failed.
                 if (error != null || ad == null)
                 {
-                    //Debug.LogError("Rewarded ad failed to load an ad " + "with error : " + error);
+                    Debug.Log("광고 로드 실패 재시도");
+                    isReloadPending = true; // 여기서도 플래그를 세워주면 무한 동력 완성!
                     return;
                 }
 
-                //Debug.Log("Rewarded ad loaded with response : " + ad.GetResponseInfo());
-
+                loadFailCount = 0;
                 rewardedAd = ad;
                 RegisterEventHandlers(ad); //이벤트 등록
             });
@@ -156,30 +178,13 @@ public class AdmobADS : MonoBehaviour
         };
 
         ad.OnAdFullScreenContentClosed += () =>
-        {/*
-            if (rewardEarned)
-            {
-              //  Debug.Log("광고닫기");
-                giveMeReward();
-                rewardEarned = false;
-            }
-            */
-            if (rewardedAd != null)
-            {
-                rewardedAd.Destroy();
-                rewardedAd = null;
-            }
-            LoadRewardedAd();
+        {
+            isReloadPending = true; // 플래그만 세움, 여기서 직접 호출 X
             Debug.Log("광고 종료");
         };
         ad.OnAdFullScreenContentFailed += (AdError error) =>
         {
-            Debug.LogError(error);
-
-            rewardedAd?.Destroy();
-            rewardedAd = null;
-
-            LoadRewardedAd();
+            isReloadPending = true; // 플래그만 세움, 여기서 직접 호출 X
         };
     }
 
@@ -234,6 +239,9 @@ public class AdmobADS : MonoBehaviour
         else if (sceneIndex == 3) PlayerPrefs.SetString("adtimescity", lastDateTimenow.ToString());
         else PlayerPrefs.SetString("adtimes", lastDateTimenow.ToString());
 
+        Toast_obj.SetActive(true);
+        adPop_txt.text = "Number of talk has been reset to 5.";
+
         GM.GetComponent<ShowAds>().AdReward();
         PlayerPrefs.SetInt("talk", 5);
         PlayerPrefs.SetInt("blad", 1);
@@ -261,12 +269,12 @@ public class AdmobADS : MonoBehaviour
                 // if error is not null, the load request failed.
                 if (error != null || ad == null)
                 {
-                    //Debug.LogError("Rewarded ad failed to load an ad " + "with error : " + error);
+                    Debug.Log("광고 로드 실패, 재시도");
+                    isReloadInterstitialPending = true; // 여기서도 플래그를 세워주면 무한 동력 완성!
                     return;
                 }
 
-                //Debug.Log("Rewarded ad loaded with response : " + ad.GetResponseInfo());
-
+                loadFailCountInterstitial = 0;
                 rewardedAdout = ad;
                 RegisterEventHandlers2(ad); //이벤트 등록
             });
@@ -348,34 +356,29 @@ public class AdmobADS : MonoBehaviour
         };
 
         ad.OnAdFullScreenContentClosed += () =>
-        {/*
-            if (rewardEarned)
-            {
-                PlayerPrefs.SetInt("outtimecut", 4);
-                LoadRewardedAd2();
-                rewardEarned = false;
-            }
-            */
-
-            if (rewardedAdout != null)
-            {
-                rewardedAdout.Destroy();
-                rewardedAdout = null;
-            }
-            LoadRewardedAd2();
+        {
+            isReloadInterstitialPending = true;
             Debug.Log("광고 종료");
         };
         ad.OnAdFullScreenContentFailed += (AdError error) =>
         {
-            Debug.LogError(error);
-
-            rewardedAdout?.Destroy();
-            rewardedAdout = null;
-
-            LoadRewardedAd2();
+            isReloadInterstitialPending = true;
         };
     }
 
+    private void OnDestroy()
+    {
+        if (rewardedAd != null)
+        {
+            rewardedAd.Destroy();
+            rewardedAd = null;
+        }
+        if (rewardedAdout != null)
+        {
+            rewardedAdout.Destroy();
+            rewardedAdout = null;
+        }
+    }
 }
 
 
